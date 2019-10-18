@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version
+  2.6.5
 
-Things you may want to cover:
+- System dependencies
+  Install a ruby version manager: https://github.com/rbenv/rbenv or `asdf`
+  Use it to install Ruby 2.6.5 `rbenv install 2.6.5`
 
-* Ruby version
+  You will need node 10 or above, probably. You may want to use a node version manager like `nvm` or `asdf`
+  Install node using `nvm` `asdf`, or any other package manager
 
-* System dependencies
+  Install postgres, the quickest way on a Mac is: `brew install postgres`
 
-* Configuration
+- Configuration
 
-* Database creation
+* `gem install bundler`
+* `bundle install`
 
-* Database initialization
+- Database creation
 
-* How to run the test suite
+  `rake db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+- Running the app
+  `rails s`
 
-* Deployment instructions
+  visit http://localhost:3000
 
-* ...
+- Linting
+  `rubocop`
+  `yarn lint`
+
+- How to run the test suite
+  `rspec`
+  `yarn test`
+
+- Deployment instructions
