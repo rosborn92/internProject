@@ -7,7 +7,8 @@ module.exports = {
   },
   rules: {
     "prettier/prettier": "error",
-    complexity: ["error", 4]
+    complexity: ["error", 4],
+    "import/no-unused-modules": "off"
   },
   parser: "babel-eslint",
   settings: {

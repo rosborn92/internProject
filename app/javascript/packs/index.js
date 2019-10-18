@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unused-modules */
 import React from "react";
 import { render } from "react-dom";
 
-const App = <div> Hello World </div>;
+import App from "../components/app";
 
-render(App, document.getElementById("app"));
+render(<App />, document.getElementById("app"));
