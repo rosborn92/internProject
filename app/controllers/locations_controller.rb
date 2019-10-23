@@ -28,9 +28,13 @@ class LocationsController < ApplicationController
     @location.destroy
   end
 
-private
+  private
 
- def location_params
-   params.require(:location).permit(:name, :location_type, :contact_name,:contact_phone_number,:contact_email,:contact_relationship,:address_street,:address_city,:address_state,:address_zip,:phone_number ,:reference,:school_principal,:principal_email,:school_distric,:county_district,:city_district)
- end
+  def location_params
+    params.require(:location).permit(:name, :location_type, :contact_name,
+                                     :contact_phone_number, :contact_email, :contact_relationship,
+                                     :address_street, :address_city, :address_state, :address_zip,
+                                     :phone_number, :reference, :school_principal, :principal_email,
+                                     :school_district, :county_district, :city_district)
+  end
 end

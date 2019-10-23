@@ -24,19 +24,19 @@ RSpec.describe LocationsController, type: :controller do
   context 'PUT #update' do
     it 'can update a location' do
       @location = Location.create(name: "Test Again")
-      patch :update, params: { id: @location.id, location: { name: "Andy" }, format: :json}
-      expect(response.body).to include( "Andy" )
+      patch :update, params: { id: @location.id, location: { name: "Andy" }, format: :json }
+      expect(response.body).to include("Andy")
     end
   end
 
   context 'DELETE #delete' do
     it 'can delete a location' do
       @location = Location.create
-      expect {
+      expect do
         delete :destroy, params: { id: @location.id }
-      }.to change {
+      end.to change {
         Location.count
-      }.by -1
+      }.by(-1)
 
       expect(response).to have_http_status(204)
     end
