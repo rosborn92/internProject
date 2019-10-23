@@ -10,21 +10,21 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.create
+    @location = Location.create(location_params)
     render json: @location
   end
 
   def update
     @location = Location.find(params[:id])
     if @location.update(location_params)
-      render :show
+      render json: @location
     else
-      render json: {error: "could not update"}, status: 400
+      render json: { error: "could not update" }, status: 400
     end
   end
 
   def destroy
-    @location =Location.find(params[:id])
+    @location = Location.find(params[:id])
     @location.destroy
   end
 
