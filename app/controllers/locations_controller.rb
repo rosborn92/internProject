@@ -10,14 +10,14 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.create
+    @location = Location.create(location_params)
     render json: @location
   end
 
   def update
     @location = Location.find(params[:id])
     if @location.update(location_params)
-      render :show
+      render json: @location
     else
       render json: { error: "could not update" }, status: 400
     end
@@ -35,6 +35,6 @@ class LocationsController < ApplicationController
                                      :contact_phone_number, :contact_email, :contact_relationship,
                                      :address_street, :address_city, :address_state, :address_zip,
                                      :phone_number, :reference, :school_principal, :principal_email,
-                                     :school_distric, :county_district, :city_district)
+                                     :school_district, :county_district, :city_district)
   end
 end
