@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:location,
                                     :date, :contact_name, :contact_phone_number,
-                                    :contact_email, :contact_relationship_to_location)
+                                    :contact_email, :contact_relationship_to_location,
+                                    :location_id)
   end
 end
