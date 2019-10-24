@@ -9,14 +9,14 @@ RSpec.describe LocationsController, type: :controller do
     it 'checks location being created in the response' do
       Location.create(name: "Test Again")
       get :index
-      expect(response.body).to include("Test Again") # response.success?
+      expect(response.body).to include("Test Again")
     end
   end
 
   context 'POST #create' do
     it 'can create a location' do
       post :create, params: { location: { name: "Bridget" }, format: :json }
-      expect(response.body).to include("Bridget") # response.success?
+      expect(response.body).to include("Bridget")
     end
   end
 
