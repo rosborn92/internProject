@@ -6,7 +6,6 @@ RSpec.describe LocationsController, type: :controller do
       get :index
       expect(response).to have_http_status(200) # response.success?
     end
-
     it 'checks location being created in the response' do
       Location.create(name: "Test Again")
       get :index
@@ -37,7 +36,6 @@ RSpec.describe LocationsController, type: :controller do
       end.to change {
         Location.count
       }.by(-1)
-
       expect(response).to have_http_status(204)
     end
   end

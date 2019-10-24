@@ -1,9 +1,16 @@
 {
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+  },
+  "formation": {
+  },
   "name": "la-jolla-playhouse",
-  "scripts": {},
-  "env": {},
-  "formation": {},
-  "addons": [],
-  "buildpacks": [],
+  "scripts": {
+  },
   "stack": "heroku-18"
 }

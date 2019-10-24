@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
   end
 
   def create
+
     @location = Location.create(location_params)
     render json: @location
   end
