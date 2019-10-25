@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+skip_before_action :verify_authenticity_token
+
   def index
     @locations = Location.all
     render json: @locations
@@ -10,7 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.create(location_params)
+    @location = Location.create location_params
     render json: @location
   end
 
