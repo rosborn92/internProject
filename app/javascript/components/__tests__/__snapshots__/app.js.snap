@@ -1,7 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders the component correctly 1`] = `
-<div>
-   Hello World 
-</div>
+<BrowserRouter>
+  <div>
+    <div>
+       Hello World 
+    </div>
+    <h3>
+      <Link
+        to="/AddLocation"
+      >
+        Add Location
+      </Link>
+    </h3>
+  </div>
+  <Route
+    exact={true}
+    path="/AddLocation"
+    render={[Function]}
+  />
+</BrowserRouter>
 `;
