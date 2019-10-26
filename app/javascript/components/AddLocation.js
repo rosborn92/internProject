@@ -63,13 +63,13 @@ class AddLocation extends React.Component {
     } = this.state;
     const { success } = this.props;
 
-    console.log(this.state.form);
     return (
       <>
         <form>
           <h1>Add Location</h1>
           <p>Enter Location Name:</p>
           <input
+            id="name"
             name="name"
             onChange={this.handleChange}
             type="text"
@@ -78,6 +78,7 @@ class AddLocation extends React.Component {
 
           <p>Select Location Type:</p>
           <select
+            id="location_type"
             name="location_type"
             onChange={this.handleChange}
             value={location_type}
@@ -89,6 +90,7 @@ class AddLocation extends React.Component {
 
           <p>Enter Contact Name:</p>
           <input
+            id="contact_name"
             name="contact_name"
             onChange={this.handleChange}
             type="text"
@@ -96,6 +98,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Contact Phone Number:</p>
           <input
+            id="contact_phone_number"
             name="contact_phone_number"
             onChange={this.handleChange}
             type="text"
@@ -103,6 +106,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Contact Email:</p>
           <input
+            id="contact_email"
             name="contact_email"
             onChange={this.handleChange}
             type="text"
@@ -110,6 +114,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Contact Relationship to Location:</p>
           <input
+            id="contact_relationship"
             name="contact_relationship"
             onChange={this.handleChange}
             type="text"
@@ -117,6 +122,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Location Address:</p>
           <input
+            id="address_street"
             name="address_street"
             onChange={this.handleChange}
             type="text"
@@ -124,6 +130,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Location City:</p>
           <input
+            id="address_city"
             name="address_city"
             onChange={this.handleChange}
             type="text"
@@ -131,6 +138,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Location State:</p>
           <input
+            id="address_state"
             name="address_state"
             onChange={this.handleChange}
             type="text"
@@ -138,6 +146,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Location Zipcode:</p>
           <input
+            id="address_zip"
             name="address_zip"
             onChange={this.handleChange}
             type="text"
@@ -145,6 +154,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Location Phone Number:</p>
           <input
+            id="phone_number"
             name="phone_number"
             onChange={this.handleChange}
             type="text"
@@ -152,6 +162,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Reference(if any):</p>
           <input
+            id="reference"
             name="reference"
             onChange={this.handleChange}
             type="text"
@@ -160,6 +171,7 @@ class AddLocation extends React.Component {
 
           <p>Enter School Principal Name:</p>
           <input
+            id="school_principal"
             name="school_principal"
             onChange={this.handleChange}
             type="text"
@@ -167,6 +179,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter Principal Email:</p>
           <input
+            id="principal_email"
             name="principal_email"
             onChange={this.handleChange}
             type="text"
@@ -174,6 +187,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter School District:</p>
           <input
+            id="school_district"
             name="school_district"
             onChange={this.handleChange}
             type="text"
@@ -181,6 +195,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter County District:</p>
           <input
+            id="county_district"
             name="county_district"
             onChange={this.handleChange}
             type="text"
@@ -188,6 +203,7 @@ class AddLocation extends React.Component {
           />
           <p>Enter City District:</p>
           <input
+            id="city_district"
             name="city_district"
             onChange={this.handleChange}
             type="text"
