@@ -7,7 +7,7 @@ class AddLocation extends React.Component{
     this.state = {
       form: {
         name: "",
-        location_type: "School",
+        location_type: "school",
         contact_name: "",
         contact_phone_number: "",
         contact_email: "",
@@ -59,7 +59,7 @@ class AddLocation extends React.Component{
       school_district,
       county_district,
       city_district
-    } = this.state
+    } = this.state.form
     const { success } = this.props
     console.log(this.state.form)
   return(
@@ -155,42 +155,51 @@ class AddLocation extends React.Component{
           onChange={this.handleChange}
         />
 
-        <p>Enter School Principal Name:</p>
-        <input
-          type="text"
-          name="school_principal"
-          value={school_principal}
-          onChange={this.handleChange}
-        />
-        <p>Enter Principal Email:</p>
-        <input
-          type="text"
-          name="principal_email"
-          value={principal_email}
-          onChange={this.handleChange}
-        />
-        <p>Enter School District:</p>
-        <input
-          type="text"
-          name="school_district"
-          value={school_district}
-          onChange={this.handleChange}
-        />
-        <p>Enter County District:</p>
-        <input
-          type="text"
-          name="county_district"
-          value={county_district}
-          onChange={this.handleChange}
-        />
-        <p>Enter City District:</p>
-        <input
-          type="text"
-          name="city_district"
-          value={city_district}
-          onChange={this.handleChange}
-        />
-        {"\n"}
+        {location_type == "school" ? (
+          <div>
+            <p>Enter School Principal Name:</p>
+            <input
+              type="text"
+              name="school_principal"
+              value={school_principal}
+              onChange={this.handleChange}
+            />
+            <p>Enter Principal Email:</p>
+            <input
+              type="text"
+              name="principal_email"
+              value={principal_email}
+              onChange={this.handleChange}
+            />
+            <p>Enter School District:</p>
+            <input
+              type="text"
+              name="school_district"
+              value={school_district}
+              onChange={this.handleChange}
+            />
+          </div>
+        ):
+        (
+          <div>
+            <p>Enter County District:</p>
+            <input
+              type="text"
+              name="county_district"
+              value={county_district}
+              onChange={this.handleChange}
+            />
+            <p>Enter City District:</p>
+            <input
+              type="text"
+              name="city_district"
+              value={city_district}
+              onChange={this.handleChange}
+            />
+          </div>
+        )}
+        <br />
+        <br />
         <button type="button" onClick={this.handleClick}>Submit</button>
         {success && <Redirect to="/" /> }
       </form>
