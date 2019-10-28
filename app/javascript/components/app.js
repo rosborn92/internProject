@@ -69,14 +69,17 @@ const StyledLayout = styled.div`
   }
 `;
 
-class App extends React.Component{
+import AddLocation from "./AddLocation";
+import { getLocations, createLocation } from "./api";
+
+class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       locations: [],
       bookings: [],
       success: false
-    }
+    };
   }
 
   handleNewLocation = (location) => {

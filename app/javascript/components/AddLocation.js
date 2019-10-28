@@ -1,9 +1,9 @@
 import React from "react";
-import { Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom";
 
-class AddLocation extends React.Component{
+class AddLocation extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       form: {
         name: "",
@@ -19,29 +19,30 @@ class AddLocation extends React.Component{
         phone_number: "",
         reference: "",
         school_principal: "",
-        school_principal: "",
         principal_email: "",
         school_district: "",
         county_district: "",
         city_district: ""
       }
-    }
+    };
   }
 
-  handleChange = (e) => {
-    const { form } = this.state
-    const { name, value } = e.target
-    form[name] = value
-    this.setState({ form })
-  }
+  handleChange = e => {
+    const { form } = this.state;
+    const { name, value } = e.target;
+
+    form[name] = value;
+    this.setState({ form });
+  };
 
   handleClick = () => {
-    const{ form } = this.state
-    this.props.handleNewLocation(form)
-  }
+    const { form } = this.state;
+
+    this.props.handleNewLocation(form);
+  };
 
   render() {
-    const{
+    const {
       name,
       location_type,
       contact_name,
@@ -76,84 +77,96 @@ class AddLocation extends React.Component{
 
           <p>Select Location Type:</p>
           <select
+            id="location_type"
             name="location_type"
+            onChange={this.handleChange}
             value={location_type}
-            onChange={this.handleChange}>
-              <option value="school">School</option>
-              <option value="non-school">Non-School</option>
-              <option value="corporate">Corporate</option>
+          >
+            ><option value="school">School</option>
+            <option value="non-school">Non-School</option>
+            <option value="corporate">Corporate</option>
           </select>
 
-        <p>Enter Contact Name:</p>
-        <input
-        type="text"
-        name="contact_name"
-        value={contact_name}
-        onChange={this.handleChange}
-        />
-        <p>Enter Contact Phone Number:</p>
-        <input
-          type="text"
-          name="contact_phone_number"
-          value={contact_phone_number}
-          onChange={this.handleChange}
-        />
-        <p>Enter Contact Email:</p>
-        <input
-          type="text"
-          name="contact_email"
-          value={contact_email}
-          onChange={this.handleChange}
-        />
-        <p>Enter Contact Relationship to Location:</p>
-        <input
-          type="text"
-          name="contact_relationship"
-          value={contact_relationship}
-          onChange={this.handleChange}
-        />
-        <p>Enter Location Address:</p>
-        <input
-          type="text"
-          name="address_street"
-          value={address_street}
-          onChange={this.handleChange}
-        />
-        <p>Enter Location City:</p>
-        <input
-          type="text"
-          name="address_city"
-          value={address_city}
-          onChange={this.handleChange}
-        />
-        <p>Enter Location State:</p>
-        <input
-          type="text"
-          name="address_state"
-          value={address_state}
-          onChange={this.handleChange}
-        />
-        <p>Enter Location Zipcode:</p>
-        <input
-          type="text"
-          name="address_zip"
-          value={address_zip}
-          onChange={this.handleChange}
-        />
-        <p>Enter Location Phone Number:</p>
-        <input
-          type="text"
-          name="phone_number"
-          value={phone_number}
-          onChange={this.handleChange}
-        />
-        <p>Enter Reference(if any):</p>
-        <input
-          type="text"
-          name="reference"
-          value={reference}
-          onChange={this.handleChange}
-        />
+          <p>Enter Contact Name:</p>
+          <input
+            id="contact_name"
+            name="contact_name"
+            onChange={this.handleChange}
+            type="text"
+            value={contact_name}
+          />
+          <p>Enter Contact Phone Number:</p>
+          <input
+            id="contact_phone_number"
+            name="contact_phone_number"
+            onChange={this.handleChange}
+            type="text"
+            value={contact_phone_number}
+          />
+          <p>Enter Contact Email:</p>
+          <input
+            id="contact_email"
+            name="contact_email"
+            onChange={this.handleChange}
+            type="text"
+            value={contact_email}
+          />
+          <p>Enter Contact Relationship to Location:</p>
+          <input
+            id="contact_relationship"
+            name="contact_relationship"
+            onChange={this.handleChange}
+            type="text"
+            value={contact_relationship}
+          />
+          <p>Enter Location Address:</p>
+          <input
+            id="address_street"
+            name="address_street"
+            onChange={this.handleChange}
+            type="text"
+            value={address_street}
+          />
+          <p>Enter Location City:</p>
+          <input
+            id="address_city"
+            name="address_city"
+            onChange={this.handleChange}
+            type="text"
+            value={address_city}
+          />
+          <p>Enter Location State:</p>
+          <input
+            id="address_state"
+            name="address_state"
+            onChange={this.handleChange}
+            type="text"
+            value={address_state}
+          />
+          <p>Enter Location Zipcode:</p>
+          <input
+            id="address_zip"
+            name="address_zip"
+            onChange={this.handleChange}
+            type="text"
+            value={address_zip}
+          />
+          <p>Enter Location Phone Number:</p>
+          <input
+            id="phone_number"
+            name="phone_number"
+            onChange={this.handleChange}
+            type="text"
+            value={phone_number}
+          />
+          <p>Enter Reference(if any):</p>
+          <input
+            id="reference"
+            name="reference"
+            onChange={this.handleChange}
+            type="text"
+            value={reference}
+          />
 
         {location_type == "school" ? (
           <div>
