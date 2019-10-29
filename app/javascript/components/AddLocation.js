@@ -60,20 +60,21 @@ class AddLocation extends React.Component {
       school_district,
       county_district,
       city_district
-    } = this.state.form
-    const { success } = this.props
-    console.log(this.state.form)
-  return(
-    <React.Fragment>
-      <form>
-        <h1>Add Location</h1>
-        <p>Enter Location Name:</p>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={this.handleChange}
-        />
+    } = this.state.form;
+    const { success } = this.props;
+
+    return (
+      <>
+        <form>
+          <h1>Add Location</h1>
+          <p>Enter Location Name:</p>
+          <input
+            id="name"
+            name="name"
+            onChange={this.handleChange}
+            type="text"
+            value={name}
+          />
 
           <p>Select Location Type:</p>
           <select
@@ -168,56 +169,62 @@ class AddLocation extends React.Component {
             value={reference}
           />
 
-        {location_type == "school" ? (
-          <div>
-            <p>Enter School Principal Name:</p>
-            <input
-              type="text"
-              name="school_principal"
-              value={school_principal}
-              onChange={this.handleChange}
-            />
-            <p>Enter Principal Email:</p>
-            <input
-              type="text"
-              name="principal_email"
-              value={principal_email}
-              onChange={this.handleChange}
-            />
-            <p>Enter School District:</p>
-            <input
-              type="text"
-              name="school_district"
-              value={school_district}
-              onChange={this.handleChange}
-            />
-          </div>
-        ):
-        (
-          <div>
-            <p>Enter County District:</p>
-            <input
-              type="text"
-              name="county_district"
-              value={county_district}
-              onChange={this.handleChange}
-            />
-            <p>Enter City District:</p>
-            <input
-              type="text"
-              name="city_district"
-              value={city_district}
-              onChange={this.handleChange}
-            />
-          </div>
-        )}
-        <br />
-        <br />
-        <button type="button" onClick={this.handleClick}>Submit</button>
-        {success && <Redirect to="/" /> }
-      </form>
-    </React.Fragment>
-  )
-}
+          {location_type == "school" ? (
+            <div>
+              <p>Enter School Principal Name:</p>
+              <input
+                id="school_principal"
+                name="school_principal"
+                onChange={this.handleChange}
+                type="text"
+                value={school_principal}
+              />
+              <p>Enter Principal Email:</p>
+              <input
+                id="principal_email"
+                name="principal_email"
+                onChange={this.handleChange}
+                type="text"
+                value={principal_email}
+              />
+              <p>Enter School District:</p>
+              <input
+                id="school_district"
+                name="school_district"
+                onChange={this.handleChange}
+                type="text"
+                value={school_district}
+              />
+            </div>
+          ) : (
+            <div>
+              <p>Enter County District:</p>
+              <input
+                id="county_district"
+                name="county_district"
+                onChange={this.handleChange}
+                type="text"
+                value={county_district}
+              />
+              <p>Enter City District:</p>
+              <input
+                id="city_district"
+                name="city_district"
+                onChange={this.handleChange}
+                type="text"
+                value={city_district}
+              />
+            </div>
+          )}
+          <br />
+          <br />
+          <button onClick={this.handleClick} type="button">
+            Submit
+          </button>
+          {success && <Redirect to="/" />}
+        </form>
+      </>
+    );
+  }
 }
 export default AddLocation;

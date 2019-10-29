@@ -20,7 +20,7 @@ test("AddLocation renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test("AddLocation tests a all fields of input", () => {
+test("AddLocation tests all fields of input", () => {
   const app = shallow(<AddLocation />);
 
   expect(app.find("#name").exists()).toEqual(true);
@@ -38,9 +38,18 @@ test("AddLocation tests a all fields of input", () => {
   expect(app.find("#school_principal").exists()).toEqual(true);
   expect(app.find("#principal_email").exists()).toEqual(true);
   expect(app.find("#school_district").exists()).toEqual(true);
-  expect(app.find("#county_district").exists()).toEqual(true);
-  expect(app.find("#city_district").exists()).toEqual(true);
-  expect(app.find("button").exists()).toEqual(true);
+});
+
+test("If Type is not a school", () => {
+  const other = shallow(<AddLocation />);
+
+  other.find("#location_type").simulate("change", {
+    target: { name: "location_type", value: "Non-School" }
+  });
+
+  expect(other.find("#county_district").exists()).toEqual(true);
+  expect(other.find("#city_district").exists()).toEqual(true);
+  expect(other.find("button").exists()).toEqual(true);
 });
 
 describe("Test handlechange component", () => {
@@ -57,7 +66,7 @@ describe("Test handlechange component", () => {
     expect(mockCallBack.mock.calls[0]).toEqual([
       {
         name: newName,
-        location_type: "School",
+        location_type: "school",
         contact_name: "",
         contact_phone_number: "",
         contact_email: "",

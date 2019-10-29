@@ -23,10 +23,11 @@ const Theme = {
   georgia: "georgia, serif",
   sansSerif: "Nunito, sansSerif",
   serif: "georgia, serif",
-  regular: 400,
-  bold: 700,
-  black: 900,
+  weightRegular: 400,
+  weightBold: 700,
+  weightBlack: 900
   // theme colors
   // margin, padding, sizes
 };
+
 export default Theme;

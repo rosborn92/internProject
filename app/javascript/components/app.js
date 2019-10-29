@@ -1,18 +1,19 @@
 import React from "react";
-import styled, { ThemeProvider } from 'styled-components/macro';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { getLocations, createLocation } from './api'
-import AddLocation from './AddLocation'
-import Home from './Home'
-import Theme from './styles/Theme'
-import GlobalStyle from './styles/Global'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import styled, { ThemeProvider } from "styled-components/macro";
+
+import AddLocation from "./AddLocation";
+import { getLocations, createLocation } from "./api";
+import Home from "./Home";
 import Logo from "./Logo";
+import GlobalStyle from "./styles/Global";
+import Theme from "./styles/Theme";
 
 const StyledLayout = styled.div`
   display: grid;
   grid-template-columns: 225px 1fr;
-  grid-template-areas:
-    "sidebar main";
+  grid-template-areas: "sidebar main";
 
   aside {
     border-right: 1px solid ${props => props.theme.whiteSmoke};
@@ -23,10 +24,10 @@ const StyledLayout = styled.div`
     padding: 45px;
     position: fixed;
 
-     ol {
-       list-style-type: none;
-       padding: 0;
-     }
+    ol {
+      list-style-type: none;
+      padding: 0;
+    }
 
     ol.top-nav {
       counter-reset: nav-list;
@@ -68,9 +69,6 @@ const StyledLayout = styled.div`
   }
 `;
 
-import AddLocation from "./AddLocation";
-import { getLocations, createLocation } from "./api";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -80,26 +78,23 @@ class App extends React.Component {
     };
   }
 
-  handleNewLocation = (location) => {
-       createLocation(location)
-       .then(location => {
-         this.setState({success: true})
-         getLocations()
-         .then(locations=>{
-             this.setState({locations})
-         })
-     })
-   }
+  handleNewLocation = location => {
+    createLocation(location).then(location => {
+      this.setState({ success: true });
+      getLocations().then(locations => {
+        this.setState({ locations });
+      });
+    });
+  };
 
-  changeSuccess = (value) => {
-    this.setState({success: value})
-  }
+  changeSuccess = value => {
+    this.setState({ success: value });
+  };
 
   componentDidMount() {
-      getLocations()
-      .then( locations => {
-            this.setState({locations})
-      })
+    getLocations().then(locations => {
+      this.setState({ locations });
+    });
   }
 
   // componentDidUpdate(prevState) {
@@ -109,48 +104,67 @@ class App extends React.Component {
   // }
 
   render() {
-    let {locations} = this.state
-  return(
-    <ThemeProvider theme={Theme}>
-      <GlobalStyle />
-      <StyledLayout>
-    <Router>
-      <aside>
-        <Logo />
-        <ol className="top-nav">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/AddLocation">Add Location</Link></li>
-        </ol>
-        <ol className="btm-nav">
-          <li><Link>Settings</Link></li>
-          <li><Link>Logout</Link></li>
-        </ol>
-      </aside>
+    const { locations } = this.state;
 
-      <main>
-      <Route exact path="/AddLocation" render={(props)=>{
-        return(
-          <AddLocation
-              {...props} handleNewLocation={this.handleNewLocation} success={this.state.success}
-          />
-        )
-      }}
-      />
+    return (
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <StyledLayout>
+          <Router>
+            <aside>
+              <Logo />
+              <ol className="top-nav">
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/AddLocation">Add Location</Link>
+                </li>
+              </ol>
+              <ol className="btm-nav">
+                <li>
+                  <Link>Settings</Link>
+                </li>
+                <li>
+                  <Link>Logout</Link>
+                </li>
+              </ol>
+            </aside>
 
-      <Route exact path="/" render={(props)=>{
-        return(
-          <Home
-              {...props} success={this.state.success} changeSuccess={this.changeSuccess} locations={this.state.locations}
-          />
-        )
-      }}
-      />
-      </main>
-    </Router>
-    </StyledLayout>
-    </ThemeProvider>
+            <main>
+              <Route
+                exact
+                path="/AddLocation"
+                render={props => {
+                  return (
+                    <AddLocation
+                      {...props}
+                      handleNewLocation={this.handleNewLocation}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
 
-  )
-}
+              <Route
+                exact
+                path="/"
+                render={props => {
+                  return (
+                    <Home
+                      {...props}
+                      changeSuccess={this.changeSuccess}
+                      locations={this.state.locations}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
+            </main>
+          </Router>
+        </StyledLayout>
+      </ThemeProvider>
+    );
+  }
 }
 export default App;
