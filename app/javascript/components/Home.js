@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { getLocations, createLocation } from './api'
 import AddLocation from './AddLocation'
-import AddBooking from './AddBooking'
 
 class Home extends React.Component{
 

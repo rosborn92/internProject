@@ -1,9 +1,8 @@
 import React from "react";
 import styled, { ThemeProvider } from 'styled-components/macro';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { getLocations, createLocation, createBooking } from './api'
+import { getLocations, createLocation } from './api'
 import AddLocation from './AddLocation'
-import AddBooking from './AddBooking'
 import Home from './Home'
 import Theme from './styles/Theme'
 import GlobalStyle from './styles/Global'
@@ -77,7 +76,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       locations: [],
-      bookings: [],
       success: false
     };
   }
@@ -89,17 +87,6 @@ class App extends React.Component {
          getLocations()
          .then(locations=>{
              this.setState({locations})
-         })
-     })
-   }
-
-  handleNewBooking = (booking) => {
-       createBooking(booking)
-       .then(booking => {
-         this.setState({success: true})
-         getBookings()
-         .then(bookings=>{
-             this.setState({bookings})
          })
      })
    }
@@ -133,7 +120,6 @@ class App extends React.Component {
         <ol className="top-nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/AddLocation">Add Location</Link></li>
-            <li><Link to="/AddBooking">Add Booking</Link></li>
         </ol>
         <ol className="btm-nav">
           <li><Link>Settings</Link></li>
@@ -150,14 +136,7 @@ class App extends React.Component {
         )
       }}
       />
-      <Route exact path="/AddBooking" render={(props)=>{
-        return(
-          <AddBooking
-              {...props} handleNewBooking={this.handleNewBooking} success={this.state.success} locations={this.state.locations}
-          />
-        )
-      }}
-      />
+
       <Route exact path="/" render={(props)=>{
         return(
           <Home
