@@ -68,9 +68,6 @@ const StyledLayout = styled.div`
   }
 `;
 
-import AddLocation from "./AddLocation";
-import { getLocations, createLocation } from "./api";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
