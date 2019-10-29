@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { getLocations, createLocation } from './api'
-import AddLocation from './AddLocation'
+import { getLocations, createLocation } from '../../Components/api'
+import { AddLocation } from '../../Components/AddLocation'
 
 class Home extends React.Component{
 
@@ -22,4 +22,4 @@ class Home extends React.Component{
   )
 }
 }
-export default Home;
+export { Home };

@@ -220,4 +220,4 @@ class AddLocation extends React.Component {
   )
 }
 }
-export default AddLocation;
+export { AddLocation };
