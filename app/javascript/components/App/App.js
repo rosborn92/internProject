@@ -1,12 +1,15 @@
 import React from "react";
-import styled, { ThemeProvider } from 'styled-components/macro';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { getLocations, createLocation } from '../api'
-import { AddLocation } from '../AddLocation'
-import { Home } from '../../Pages/Home'
-import Theme from '../styles/Theme'
-import GlobalStyle from '../styles/Global'
-import { Logo } from "../Logo";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import styled, { ThemeProvider } from "styled-components/macro";
+
+import { Home } from "../../Pages/Home";
+import { AddLocation } from "../AddLocation";
+import { getLocations, createLocation } from "../api";
+import { NavBar } from "../NavBar";
+import GlobalStyle from "../styles/Global";
+import Theme from "../styles/Theme";
+
 import { StyledLayout } from "./App.styles";
 
 class App extends React.Component {
@@ -18,26 +21,23 @@ class App extends React.Component {
     };
   }
 
-  handleNewLocation = (location) => {
-       createLocation(location)
-       .then(location => {
-         this.setState({success: true})
-         getLocations()
-         .then(locations=>{
-             this.setState({locations})
-         })
-     })
-   }
+  handleNewLocation = location => {
+    createLocation(location).then(location => {
+      this.setState({ success: true });
+      getLocations().then(locations => {
+        this.setState({ locations });
+      });
+    });
+  };
 
-  changeSuccess = (value) => {
-    this.setState({success: value})
-  }
+  changeSuccess = value => {
+    this.setState({ success: value });
+  };
 
   componentDidMount() {
-      getLocations()
-      .then( locations => {
-            this.setState({locations})
-      })
+    getLocations().then(locations => {
+      this.setState({ locations });
+    });
   }
 
   // componentDidUpdate(prevState) {
@@ -47,48 +47,49 @@ class App extends React.Component {
   // }
 
   render() {
-    let {locations} = this.state
-  return(
-    <ThemeProvider theme={Theme}>
-      <GlobalStyle />
-      <StyledLayout>
-    <Router>
-      <aside>
-        <Logo />
-        <ol className="top-nav">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/AddLocation">Add Location</Link></li>
-        </ol>
-        <ol className="btm-nav">
-          <li><Link>Settings</Link></li>
-          <li><Link>Logout</Link></li>
-        </ol>
-      </aside>
+    const { locations } = this.state;
 
-      <main>
-      <Route exact path="/AddLocation" render={(props)=>{
-        return(
-          <AddLocation
-              {...props} handleNewLocation={this.handleNewLocation} success={this.state.success}
-          />
-        )
-      }}
-      />
+    return (
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <StyledLayout>
+          <Router>
+            <NavBar />
 
-      <Route exact path="/" render={(props)=>{
-        return(
-          <Home
-              {...props} success={this.state.success} changeSuccess={this.changeSuccess} locations={this.state.locations}
-          />
-        )
-      }}
-      />
-      </main>
-    </Router>
-    </StyledLayout>
-    </ThemeProvider>
+            <main>
+              <Route
+                exact
+                path="/AddLocation"
+                render={props => {
+                  return (
+                    <AddLocation
+                      {...props}
+                      handleNewLocation={this.handleNewLocation}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
 
-  )
-}
+              <Route
+                exact
+                path="/"
+                render={props => {
+                  return (
+                    <Home
+                      {...props}
+                      changeSuccess={this.changeSuccess}
+                      locations={this.state.locations}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
+            </main>
+          </Router>
+        </StyledLayout>
+      </ThemeProvider>
+    );
+  }
 }
 export { App };

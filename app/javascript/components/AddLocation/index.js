@@ -1,3 +1,3 @@
-import { AddLocation } from "./AddLocation"
+import { AddLocation } from "./AddLocation";
 
-export { AddLocation }
+export { AddLocation };

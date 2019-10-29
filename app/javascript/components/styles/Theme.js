@@ -6,6 +6,7 @@ const Theme = {
   melon: "#fbbfb7",
   crayonOrange: "#f26726",
   alabaster: "#fef217",
+  pureWhite: "#ffffff",
   whiteSmoke: "#f5f5f5",
   white: "#eeeeee",
   zircon: "#e0e0e0",
@@ -19,14 +20,17 @@ const Theme = {
   warning: "#f7df5a",
   error: "#b92121",
   // typography
-  nunito: "Nunito, sansSerif",
+  nunito: "Nunito Sans, sansSerif",
   georgia: "georgia, serif",
-  sansSerif: "Nunito, sansSerif",
+  sansSerif: "Nunito Sans, sansSerif",
   serif: "georgia, serif",
-  regular: 400,
-  bold: 700,
-  black: 900,
+  weightRegular: 400,
+  weightBold: 700,
+  weightBlack: 900,
   // theme colors
   // margin, padding, sizes
+  contentPaddingLeft: "65px",
+  offsetContentPaddingLeft: "-65px"
 };
+
 export default Theme;
