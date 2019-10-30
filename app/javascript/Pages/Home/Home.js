@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import { AddLocation } from "../../Components/AddLocation";
-import { getLocations, createLocation } from "../../Components/api";
+import { AddLocation } from "../../components/AddLocation";
+import { getLocations, createLocation } from "../../components/api";
 
 class Home extends React.Component {
   componentDidMount() {
