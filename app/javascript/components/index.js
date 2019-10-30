@@ -4,5 +4,6 @@ import { FormSectionHeader } from "./FormSectionHeader";
 import { Header } from "./Header";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
+import { TextInput } from "./TextInput";
 
-export { App, AddLocation, FormSectionHeader, Header, Logo, RadioButton };
+export { App, AddLocation, FormSectionHeader, Header, Logo, RadioButton, TextInput };
