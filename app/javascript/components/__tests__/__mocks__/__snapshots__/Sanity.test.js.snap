@@ -8,6 +8,7 @@ exports[`App renders the component correctly 1`] = `
       "black": "#212121",
       "broom": "#fef217",
       "charcoal": "#424242",
+      "contentPaddingLeft": "65px",
       "crayonOrange": "#f26726",
       "doveGrey": "#757575",
       "error": "#b92121",
@@ -15,9 +16,11 @@ exports[`App renders the component correctly 1`] = `
       "funBlue": "#1862a6",
       "georgia": "georgia, serif",
       "melon": "#fbbfb7",
-      "nunito": "Nunito, sansSerif",
+      "nunito": "Nunito Sans, sansSerif",
+      "offsetContentPaddingLeft": "-65px",
       "persianIndigo": "#66239c",
-      "sansSerif": "Nunito, sansSerif",
+      "pureWhite": "#ffffff",
+      "sansSerif": "Nunito Sans, sansSerif",
       "serif": "georgia, serif",
       "starDust": "#9e9e9e",
       "stormDust": "#616161",
@@ -33,47 +36,9 @@ exports[`App renders the component correctly 1`] = `
   }
 >
   <GlobalStyleComponent />
-  <app__StyledLayout>
+  <styled.div>
     <BrowserRouter>
-      <aside>
-        <Logo
-          className=""
-          height="120"
-          width="113"
-        />
-        <ol
-          className="top-nav"
-        >
-          <li>
-            <Link
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/AddLocation"
-            >
-              Add Location
-            </Link>
-          </li>
-        </ol>
-        <ol
-          className="btm-nav"
-        >
-          <li>
-            <Link>
-              Settings
-            </Link>
-          </li>
-          <li>
-            <Link>
-              Logout
-            </Link>
-          </li>
-        </ol>
-      </aside>
+      <NavBar />
       <main>
         <Route
           exact={true}
@@ -87,6 +52,6 @@ exports[`App renders the component correctly 1`] = `
         />
       </main>
     </BrowserRouter>
-  </app__StyledLayout>
+  </styled.div>
 </ThemeProvider>
 `;
