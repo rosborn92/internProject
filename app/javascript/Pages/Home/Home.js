@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import AddLocation from "./AddLocation";
-import { getLocations, createLocation } from "./api";
+import { AddLocation } from "../../components/AddLocation";
+import { getLocations, createLocation } from "../../components/api";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -19,4 +19,4 @@ class Home extends React.Component {
     );
   }
 }
-export default Home;
+export { Home };

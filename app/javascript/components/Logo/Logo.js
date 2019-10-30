@@ -95,4 +95,4 @@ Logo.defaultProps = {
   width: "113"
 };
 
-export default Logo;
+export { Logo };

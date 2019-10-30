@@ -3,10 +3,10 @@ import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "../../app";
+import App from "../../App";
 
 Enzyme.configure({ adapter: new Adapter() });
-jest.mock('../../api/');
+jest.mock("../../api/");
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
