@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders the component correctly 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "alabaster": "#fef217",
+      "black": "#212121",
+      "broom": "#fef217",
+      "charcoal": "#424242",
+      "contentPaddingLeft": "65px",
+      "crayonOrange": "#f26726",
+      "doveGrey": "#757575",
+      "error": "#b92121",
+      "frenchGray": "#bdbdbd",
+      "funBlue": "#1862a6",
+      "georgia": "georgia, serif",
+      "melon": "#fbbfb7",
+      "nunito": "Nunito Sans, sansSerif",
+      "offsetContentPaddingLeft": "-65px",
+      "persianIndigo": "#66239c",
+      "pureWhite": "#ffffff",
+      "sansSerif": "Nunito Sans, sansSerif",
+      "serif": "georgia, serif",
+      "starDust": "#9e9e9e",
+      "stormDust": "#616161",
+      "success": "#29a028",
+      "warning": "#f7df5a",
+      "weightBlack": 900,
+      "weightBold": 700,
+      "weightRegular": 400,
+      "white": "#eeeeee",
+      "whiteSmoke": "#f5f5f5",
+      "zircon": "#e0e0e0",
+    }
+  }
+>
+  <GlobalStyleComponent />
+  <styled.div>
+    <BrowserRouter>
+      <NavBar />
+      <main>
+        <Route
+          exact={true}
+          path="/AddLocation"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />
+      </main>
+    </BrowserRouter>
+  </styled.div>
+</ThemeProvider>
+`;

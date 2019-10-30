@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import check from "./images/radio-button--checked";
-import uncheck from "./images/radio-button--unchecked";
+import check from "./images/radio-button--checked.svg";
+import uncheck from "./images/radio-button--unchecked.svg";
 
 const StyledRadioButton = styled.label`
   color: ${props => props.theme.black};
