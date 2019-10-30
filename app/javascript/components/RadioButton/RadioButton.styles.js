@@ -18,6 +18,7 @@ const StyledRadioButton = styled.label`
     padding-left: 40px;
     position: relative;
     margin-left: -15px;
+    padding-right: 30px;
   }
 
   input[type="radio"]:checked + span {

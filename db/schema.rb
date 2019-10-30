@@ -15,22 +15,34 @@ ActiveRecord::Schema.define(version: 2019_10_30_164832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "location"
+    t.string "date"
+    t.string "contact_name"
+    t.string "contact_phone_number"
+    t.string "contact_email"
+    t.string "contact_relationship_to_location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_bookings_on_location_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "location_type"
     t.string "contact_first_name"
-    t.string "contact_phone_number"
+    t.string "contact_adress"
+    t.string "contact_phone"
     t.string "contact_email"
     t.string "contact_relationship"
-    t.string "address_street"
-    t.string "address_city"
-    t.string "address_state"
-    t.integer "address_zip"
-    t.string "phone_number"
+    t.string "adress_city"
+    t.string "adress_state"
+    t.integer "adress_zip"
+    t.string "location_phone"
     t.string "reference"
     t.string "school_principal"
     t.string "principal_email"
-    t.string "school_district"
     t.string "county_district"
     t.string "city_district"
     t.datetime "created_at", precision: 6, null: false
