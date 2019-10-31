@@ -193,7 +193,6 @@ class AddLocation extends React.Component {
             />
           <tr>
            <td>
->>>>>>> 70abfb23ca864ed1bbb8cab8c9f8940a87bbd8ab
             <StyledLabel>City</StyledLabel>
             <Thirds
               id="address_city"
@@ -224,8 +223,6 @@ class AddLocation extends React.Component {
             />
            </td>
           </tr>
-
->>>>>>> 70abfb23ca864ed1bbb8cab8c9f8940a87bbd8ab
 
             <FormSectionHeader name="Contact" />
           <tr>
@@ -285,7 +282,6 @@ class AddLocation extends React.Component {
           </td>
           <td style={{ paddingLeft:'50px'}}>
 
->>>>>>> 70abfb23ca864ed1bbb8cab8c9f8940a87bbd8ab
             <StyledLabel>Reference (if any)</StyledLabel>
             <TextInput
               id="reference"
