@@ -51,7 +51,7 @@ class AddLocation extends React.Component {
       name,
       location_type,
       contact_first_name,
-      contact_last_name, 
+      contact_last_name,
       contact_phone_number,
       contact_email,
       contact_relationship,
@@ -68,7 +68,6 @@ class AddLocation extends React.Component {
       city_district
     } = this.state.form;
     const { success } = this.props;
-
     console.log(this.state.form);
     return (
       <>
@@ -125,8 +124,6 @@ class AddLocation extends React.Component {
             />
            </td>
           </tr>  
-
-
             {location_type == "school" ? (
            <tr>
             <td>
@@ -148,8 +145,13 @@ class AddLocation extends React.Component {
                   type="text"
                   value={principal_email}
                 />
+<<<<<<< Updated upstream
               </td>
-              <td>  
+              <td>
+=======
+               </td>
+               <td>
+>>>>>>> Stashed changes
                 <StyledLabel>School District</StyledLabel>
                 <Thirds
                   name="school_district"
@@ -158,12 +160,17 @@ class AddLocation extends React.Component {
                   type="text"
                   value={school_district}
                 />
+<<<<<<< Updated upstream
 
               </td>
-             </tr> 
+             </tr>
+=======
+               </td>
+              </tr>
+>>>>>>> Stashed changes
             ) : (
               <tr>
-               <td> 
+               <td>
                 <StyledLabel>County District</StyledLabel>
                 <TextInput
                   name="county_district"
@@ -172,7 +179,7 @@ class AddLocation extends React.Component {
                   type="text"
                   value={county_district}
                 />
-               </td> 
+               </td>
                <td>
                 <StyledLabel>City District</StyledLabel>
                 <TextInput
@@ -196,8 +203,13 @@ class AddLocation extends React.Component {
               type="text"
               value={address_street}
             />
+<<<<<<< Updated upstream
         <tr>
           <td>
+=======
+          <tr>
+           <td>
+>>>>>>> Stashed changes
             <StyledLabel>City</StyledLabel>
             <Thirds
               id="address_city"
@@ -226,12 +238,18 @@ class AddLocation extends React.Component {
               type="text"
               value={address_zip}
             />
+<<<<<<< Updated upstream
           </td>
-        </tr>  
+        </tr>
+=======
+           </td>
+          </tr>
+
+>>>>>>> Stashed changes
 
             <FormSectionHeader name="Contact" />
           <tr>
-            <td>    
+            <td>
             <StyledLabel>First Name</StyledLabel>
             <TextInput
             id="contact_first_name"
@@ -275,7 +293,11 @@ class AddLocation extends React.Component {
             type="text"
             value={contact_email}
             />
-            
+<<<<<<< Updated upstream
+
+=======
+
+>>>>>>> Stashed changes
 
             <StyledLabel>Reference (if any)</StyledLabel>
             <TextInput
@@ -289,7 +311,7 @@ class AddLocation extends React.Component {
           </tr>
             <br />
             <br />
-            <SubmitButton onClick={this.handleClick} type="button">
+            <SubmitButton id="button" onClick={this.handleClick} type="button">
               Submit
             </SubmitButton>
             {success && <Redirect to="/" />}

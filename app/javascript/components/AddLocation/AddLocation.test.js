@@ -24,8 +24,11 @@ test("AddLocation tests all fields of input", () => {
   const app = shallow(<AddLocation />);
 
   expect(app.find("#name").exists()).toEqual(true);
-  expect(app.find("#location_type").exists()).toEqual(true);
-  expect(app.find("#contact_name").exists()).toEqual(true);
+  expect(app.find("#school").exists()).toEqual(true);
+  expect(app.find("#non-school").exists()).toEqual(true);
+  expect(app.find("#corporate").exists()).toEqual(true);
+  expect(app.find("#contact_first_name").exists()).toEqual(true);
+  expect(app.find("#contact_last_name").exists()).toEqual(true);
   expect(app.find("#contact_phone_number").exists()).toEqual(true);
   expect(app.find("#contact_email").exists()).toEqual(true);
   expect(app.find("#contact_relationship").exists()).toEqual(true);
@@ -35,21 +38,26 @@ test("AddLocation tests all fields of input", () => {
   expect(app.find("#address_zip").exists()).toEqual(true);
   expect(app.find("#phone_number").exists()).toEqual(true);
   expect(app.find("#reference").exists()).toEqual(true);
-  expect(app.find("#school_principal").exists()).toEqual(true);
-  expect(app.find("#principal_email").exists()).toEqual(true);
-  expect(app.find("#school_district").exists()).toEqual(true);
+  expect(other.find("#button").exists()).toEqual(true);
+});
+
+test("If Type is a school", () => {
+    const school = shallow(<AddLocation />);
+  expect(school.find("#school_principal").exists()).toEqual(true);
+  expect(school.find("#principal_email").exists()).toEqual(true);
+  expect(school.find("#school_district").exists()).toEqual(true);
 });
 
 test("If Type is not a school", () => {
   const other = shallow(<AddLocation />);
 
-  other.find("#location_type").simulate("change", {
-    target: { name: "location_type", value: "Non-School" }
+  other.find("#non-school").simulate("change", {
+    target: { name: "location_type", value: "non-school" }
   });
 
   expect(other.find("#county_district").exists()).toEqual(true);
   expect(other.find("#city_district").exists()).toEqual(true);
-  expect(other.find("button").exists()).toEqual(true);
+
 });
 
 describe("Test handlechange component", () => {
@@ -62,11 +70,11 @@ describe("Test handlechange component", () => {
     app
       .find("#name")
       .simulate("change", { target: { name: "name", value: newName } });
-    app.find("button").simulate("click");
+    app.find("#button").simulate("click");
     expect(mockCallBack.mock.calls[0]).toEqual([
       {
         name: newName,
-        location_type: "School",
+        location_type: "",
         contact_first_name: "",
         contact_last_name: "",
         contact_phone_number: "",
