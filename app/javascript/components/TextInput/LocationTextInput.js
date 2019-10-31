@@ -14,4 +14,12 @@ const LocationStyledInput = styled.input`
   font-size: 25px;
 `;
 
-export { LocationStyledInput };
+const StyledSelect = styled.select`
+  border: 1px solid ${props => props.theme.zircon};
+  height: 78px;
+  font-size: 25px;
+  background: ${props => props.theme.pureWhite};
+  appearence: none;
+`;
+
+export { LocationStyledInput, StyledSelect };

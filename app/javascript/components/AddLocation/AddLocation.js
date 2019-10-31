@@ -2,12 +2,15 @@ import { textInputs } from "polished";
 import React from "react";
 import { Redirect } from "react-router-dom";
 
+import { States } from "../../utils/States";
+import { StyledFormLayout } from "../styles/Forms";
 import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
 
 import {
   Header,
   FormSectionHeader,
+  StyledSelect,
   LocationStyledInput,
   RadioButton,
   SubmitButton,
@@ -88,20 +91,21 @@ class AddLocation extends React.Component {
 
         <StyledSlideOutPanel>
           <form>
-            <StyledLabel>Location Name</StyledLabel>
-            <LocationStyledInput
-              id="name"
-              name="name"
-              onChange={this.handleChange}
-              type="text"
-              value={name}
-            />
-            <tr>
-              <td>
+            <StyledFormLayout>
+              <div className="full">
+                <StyledLabel>Location Name</StyledLabel>
+                <LocationStyledInput
+                  id="name"
+                  name="name"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={name}
+                />
+              </div>
+              <div className="half">
                 <StyledLabel>Type</StyledLabel>
-                <br />
                 <RadioButton
-                  id="School"
+                  id="school"
                   label="School"
                   name="location_type"
                   onChange={this.handleChange}
@@ -124,8 +128,9 @@ class AddLocation extends React.Component {
                   type="radio"
                   value="corporate"
                 />
-              </td>
-              <td style={{ paddingLeft: "50px" }}>
+              </div>
+
+              <div className="half">
                 <StyledLabel>Location Phone Number</StyledLabel>
                 <TextInput
                   id="phone_number"
@@ -134,180 +139,181 @@ class AddLocation extends React.Component {
                   type="text"
                   value={phone_number}
                 />
-              </td>
-            </tr>
-            {location_type == "school" ? (
-              <tr>
-                <td>
-                  <StyledLabel>Principal Name</StyledLabel>
-                  <Thirds
-                    id="school_principal"
-                    name="school_principal"
-                    onChange={this.handleChange}
-                    type="text"
-                    value={school_principal}
-                  />
-                </td>
-                <td>
-                  <StyledLabel>Principal Email</StyledLabel>
-                  <Thirds
-                    id="principal_email"
-                    name="principal_email"
-                    onChange={this.handleChange}
-                    type="text"
-                    value={principal_email}
-                  />
-                </td>
-                <td>
-                  <StyledLabel>School District</StyledLabel>
-                  <Thirds
-                    id="school_district"
-                    name="school_district"
-                    onChange={this.handleChange}
-                    type="text"
-                    value={school_district}
-                  />
-                </td>
-              </tr>
-            ) : (
-              <tr>
-                <td>
-                  <StyledLabel>County District</StyledLabel>
-                  <TextInput
-                    id="county_district"
-                    name="county_district"
-                    onChange={this.handleChange}
-                    type="text"
-                    value={county_district}
-                  />
-                </td>
-                <td>
-                  <StyledLabel>City District</StyledLabel>
-                  <TextInput
-                    id="city_district"
-                    name="city_district"
-                    onChange={this.handleChange}
-                    type="text"
-                    value={city_district}
-                  />
-                </td>
-              </tr>
-            )}
+              </div>
 
+              {location_type == "school" ? (
+                <>
+                  <div className="third">
+                    <StyledLabel>Principal Name</StyledLabel>
+                    <Thirds
+                      id="school_principal"
+                      name="school_principal"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={school_principal}
+                    />
+                  </div>
+                  <div className="third">
+                    <StyledLabel>Principal Email</StyledLabel>
+                    <Thirds
+                      id="principal_email"
+                      name="principal_email"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={principal_email}
+                    />
+                  </div>
+                  <div className="third">
+                    <StyledLabel>School District</StyledLabel>
+                    <Thirds
+                      id="school_district"
+                      name="school_district"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={school_district}
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="half">
+                    <StyledLabel>County District</StyledLabel>
+                    <TextInput
+                      id="county_district"
+                      name="county_district"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={county_district}
+                    />
+                  </div>
+                  <div className="half">
+                    <StyledLabel>City District</StyledLabel>
+                    <TextInput
+                      id="city_district"
+                      name="city_district"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={city_district}
+                    />
+                  </div>
+                </>
+              )}
+            </StyledFormLayout>
             <FormSectionHeader name="Address" />
 
-            <tr>
-              <td>
-                <StyledLabel>Address 1</StyledLabel>
-                <TextInput
-                  id="address_1"
-                  name="address_1"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={address_1}
-                />
-              </td>
-              <td>
-                <StyledLabel>Address 2</StyledLabel>
-                <TextInput
-                  id="address_2"
-                  name="address_2"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={address_2}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <StyledLabel>City</StyledLabel>
-                <Thirds
-                  id="address_city"
-                  name="address_city"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={address_city}
-                />
-              </td>
-              <td style={{ paddingLeft: "50px" }}>
-                <StyledLabel>State</StyledLabel>
-                <Thirds
-                  id="address_state"
-                  name="address_state"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={address_state}
-                />
-              </td>
-              <td style={{ paddingLeft: "50px" }}>
-                <StyledLabel>Zip</StyledLabel>
-                <Thirds
-                  id="address_zip"
-                  name="address_zip"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={address_zip}
-                />
-              </td>
-            </tr>
+            <StyledLabel>Address 1</StyledLabel>
+            <TextInput
+              id="address_1"
+              name="address_1"
+              onChange={this.handleChange}
+              type="text"
+              value={address_1}
+            />
+
+            <StyledLabel>Address 1</StyledLabel>
+            <TextInput
+              id="address_1"
+              name="address_1"
+              onChange={this.handleChange}
+              type="text"
+              value={address_1}
+            />
+
+            <StyledLabel>Address 2</StyledLabel>
+            <TextInput
+              id="address_2"
+              name="address_2"
+              onChange={this.handleChange}
+              type="text"
+              value={address_2}
+            />
+
+            <StyledLabel>City</StyledLabel>
+            <Thirds
+              id="address_city"
+              name="address_city"
+              onChange={this.handleChange}
+              type="text"
+              value={address_city}
+            />
+
+            <StyledLabel>State</StyledLabel>
+            <StyledSelect
+              id="address_state"
+              name="address_state"
+              onChange={this.handleChange}
+              value={address_state}
+            >
+              {States.map(option => (
+                <option value={option.abbreviation}>{option.state}</option>
+              ))}
+            </StyledSelect>
+
+            <StyledLabel>Zip</StyledLabel>
+            <Thirds
+              id="address_zip"
+              name="address_zip"
+              onChange={this.handleChange}
+              type="text"
+              value={address_zip}
+            />
 
             <FormSectionHeader name="Contact" />
-            <tr>
-              <td>
-                <StyledLabel>First Name</StyledLabel>
-                <TextInput
-                  id="contact_first_name"
-                  name="contact_first_name"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={contact_first_name}
-                />
-                <StyledLabel>Phone Number</StyledLabel>
-                <TextInput
-                  id="contact_phone_number"
-                  name="contact_phone_number"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={contact_phone_number}
-                />
-                <StyledLabel>Relationship to Location</StyledLabel>
-                <TextInput
-                  id="contact_relationship"
-                  name="contact_relationship"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={contact_relationship}
-                />
-              </td>
-              <td style={{ paddingLeft: "50px" }}>
-                <StyledLabel>Last Name</StyledLabel>
-                <TextInput
-                  id="contact_last_name"
-                  name="contact_last_name"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={contact_last_name}
-                />
 
-                <StyledLabel>Email</StyledLabel>
-                <TextInput
-                  id="contact_email"
-                  name="contact_email"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={contact_email}
-                />
+            <StyledLabel>First Name</StyledLabel>
+            <TextInput
+              id="contact_first_name"
+              name="contact_first_name"
+              onChange={this.handleChange}
+              type="text"
+              value={contact_first_name}
+            />
 
-                <StyledLabel>Reference (if any)</StyledLabel>
-                <TextInput
-                  id="reference"
-                  name="reference"
-                  onChange={this.handleChange}
-                  type="text"
-                  value={reference}
-                />
-              </td>
-            </tr>
+            <StyledLabel>Last Name</StyledLabel>
+            <TextInput
+              id="contact_last_name"
+              name="contact_last_name"
+              onChange={this.handleChange}
+              type="text"
+              value={contact_last_name}
+            />
+
+            <StyledLabel>Phone Number</StyledLabel>
+            <TextInput
+              id="contact_phone_number"
+              name="contact_phone_number"
+              onChange={this.handleChange}
+              type="text"
+              value={contact_phone_number}
+            />
+
+            <StyledLabel>Email</StyledLabel>
+            <TextInput
+              id="contact_email"
+              name="contact_email"
+              onChange={this.handleChange}
+              type="text"
+              value={contact_email}
+            />
+
+            <StyledLabel>Relationship to Location</StyledLabel>
+            <TextInput
+              id="contact_relationship"
+              name="contact_relationship"
+              onChange={this.handleChange}
+              type="text"
+              value={contact_relationship}
+            />
+
+            <StyledLabel>Reference (if any)</StyledLabel>
+            <TextInput
+              id="reference"
+              name="reference"
+              onChange={this.handleChange}
+              type="text"
+              value={reference}
+            />
+
             <br />
             <br />
             <SubmitButton id="button" onClick={this.handleClick} type="button">

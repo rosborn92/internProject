@@ -45,6 +45,10 @@ test("AddLocation tests all fields of input", () => {
 test("If Type is a school", () => {
   const school = shallow(<AddLocation />);
 
+  school.find("#school").simulate("change", {
+    target: { name: "location_type", value: "school" }
+  });
+
   expect(school.find("#school_principal").exists()).toEqual(true);
   expect(school.find("#principal_email").exists()).toEqual(true);
   expect(school.find("#school_district").exists()).toEqual(true);
