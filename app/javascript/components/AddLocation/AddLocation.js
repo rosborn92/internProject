@@ -146,7 +146,6 @@ class AddLocation extends React.Component {
                 />
                </td>
                <td style={{ paddingLeft:'50px'}}>
->>>>>>> 70abfb23ca864ed1bbb8cab8c9f8940a87bbd8ab
                 <StyledLabel>School District</StyledLabel>
                 <Thirds
                   name="school_district"
@@ -157,7 +156,6 @@ class AddLocation extends React.Component {
                 />
                </td>
               </tr>
->>>>>>> 70abfb23ca864ed1bbb8cab8c9f8940a87bbd8ab
             ) : (
               <tr>
                <td>

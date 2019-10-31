@@ -15,6 +15,19 @@ ActiveRecord::Schema.define(version: 2019_10_31_190344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "location"
+    t.string "date"
+    t.string "contact_name"
+    t.string "contact_phone_number"
+    t.string "contact_email"
+    t.string "contact_relationship_to_location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_bookings_on_location_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "location_type"
@@ -40,4 +53,5 @@ ActiveRecord::Schema.define(version: 2019_10_31_190344) do
     t.string "address_2"
   end
 
+  add_foreign_key "bookings", "locations"
 end
