@@ -3,7 +3,7 @@ import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { AddLocation } from "components/AddLocation";
+import AddLocation from "components/AddLocation";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -67,8 +67,7 @@ describe("Test handlechange component", () => {
       {
         name: newName,
         location_type: "School",
-        contact_first_name: "",
-        contact_last_name: "",
+        contact_name: "",
         contact_phone_number: "",
         contact_email: "",
         contact_relationship: "",

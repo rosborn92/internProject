@@ -7,14 +7,10 @@ const StyledInput = styled.input`
     top: 31.25%;
     bottom: 0%; */
     background: #FFFFFF;
-    border: 1px solid ${props => props.theme.zircon};
+    border: 1px solid ${props => props.theme.Zircon};
     box-sizing: border-box;
     width: 500px;
     height: 65px;
-    margin-bottom: 40px;
-    font-size: 25px;
-
-
 `;
 
 export { StyledInput };

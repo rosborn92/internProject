@@ -4,9 +4,6 @@ import { FormSectionHeader } from "./FormSectionHeader";
 import { Header } from "./Header";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
-import { LocationStyledInput } from "./TextInput/LocationTextInput";
-import { TextInput } from "./TextInput/TextInput";
-import { Thirds } from "./TextInput/Thirds";
-import { SubmitButton } from "./Button";
+import { TextInput } from "./TextInput";
 
-export { App, AddLocation, SubmitButton, FormSectionHeader, Header, Logo, RadioButton, LocationStyledInput, TextInput, Thirds };
+export { App, AddLocation, FormSectionHeader, Header, Logo, RadioButton, TextInput };

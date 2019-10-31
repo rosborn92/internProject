@@ -7,7 +7,6 @@ const StyledLabel = styled.label`
   line-height: 1.3;
   font-size: 1.6rem;
   font-weight: ${props => props.theme.weightBold};
-  padding-top: 40px;
 `;
 
 export { StyledLabel };
