@@ -42,7 +42,8 @@ test("AddLocation tests all fields of input", () => {
 });
 
 test("If Type is a school", () => {
-    const school = shallow(<AddLocation />);
+  const school = shallow(<AddLocation />);
+
   expect(school.find("#school_principal").exists()).toEqual(true);
   expect(school.find("#principal_email").exists()).toEqual(true);
   expect(school.find("#school_district").exists()).toEqual(true);
@@ -57,7 +58,6 @@ test("If Type is not a school", () => {
 
   expect(other.find("#county_district").exists()).toEqual(true);
   expect(other.find("#city_district").exists()).toEqual(true);
-
 });
 
 describe("Test handlechange component", () => {
