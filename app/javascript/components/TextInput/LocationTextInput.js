@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-const StyledInput = styled.input`
-    /* position: absolute;
+const LocationStyledInput = styled.input`
     left: ${props => props.theme.contentPaddingLeft};
     right: 0%;
     top: 31.25%;
@@ -9,10 +8,10 @@ const StyledInput = styled.input`
     background: #FFFFFF;
     border: 1px solid ${props => props.theme.zircon};
     box-sizing: border-box;
-    width: 500px;
-    height: 65px;
+    width: 1050px;
+    height: 78px;
     margin-bottom: 40px;
     font-size: 25px;
 `;
 
-export { StyledInput };
+export { LocationStyledInput };
