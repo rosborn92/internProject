@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
-import { SubmitButton, FormSectionHeader, Header, LocationStyledInput, RadioButton, TextInput, Thirds  } from "..";
+import { Header, FormSectionHeader, LocationStyledInput, RadioButton, SubmitButton, TextInput, Thirds } from "..";
 import { textInputs } from "polished";
 
 class AddLocation extends React.Component {
@@ -51,7 +51,7 @@ class AddLocation extends React.Component {
       name,
       location_type,
       contact_first_name,
-      contact_last_name,
+      contact_last_name, 
       contact_phone_number,
       contact_email,
       contact_relationship,
@@ -85,13 +85,13 @@ class AddLocation extends React.Component {
               onChange={this.handleChange}
             />
 
-          <tr>
-            <td>
+         <tr>
+           <td>
             <StyledLabel>Type</StyledLabel>
             <br />
             <RadioButton
               label="School"
-              id="school"
+              id="School"
               name="location_type"
               value="school"
               type="radio"
@@ -113,9 +113,7 @@ class AddLocation extends React.Component {
               type="radio"
               onChange={this.handleChange}
             />
-
-
-          </td>
+           </td>
           <td style= {{ paddingLeft:'50px'}}>
           <StyledLabel>Location Phone Number</StyledLabel>
             <TextInput
@@ -127,9 +125,11 @@ class AddLocation extends React.Component {
             />
            </td>
           </tr>  
+
+
             {location_type == "school" ? (
-              <tr>
-               <td>
+           <tr>
+            <td>
                 <StyledLabel>Principal Name</StyledLabel>
                 <Thirds
                   name="school_principal"
@@ -138,8 +138,8 @@ class AddLocation extends React.Component {
                   type="text"
                   value={school_principal}
                 />
-               </td>
-               <td>
+              </td>
+              <td>
                 <StyledLabel>Principal Email</StyledLabel>
                 <Thirds
                   name="principal_email"
@@ -148,8 +148,8 @@ class AddLocation extends React.Component {
                   type="text"
                   value={principal_email}
                 />
-               </td> 
-               <td>
+              </td>
+              <td>  
                 <StyledLabel>School District</StyledLabel>
                 <Thirds
                   name="school_district"
@@ -158,11 +158,12 @@ class AddLocation extends React.Component {
                   type="text"
                   value={school_district}
                 />
-               </td> 
-              </tr>
+
+              </td>
+             </tr> 
             ) : (
               <tr>
-               <td>
+               <td> 
                 <StyledLabel>County District</StyledLabel>
                 <TextInput
                   name="county_district"
@@ -171,8 +172,8 @@ class AddLocation extends React.Component {
                   type="text"
                   value={county_district}
                 />
-               </td>
-               <td style= {{ paddingLeft:'50px'}}>
+               </td> 
+               <td>
                 <StyledLabel>City District</StyledLabel>
                 <TextInput
                   name="city_district"
@@ -181,7 +182,7 @@ class AddLocation extends React.Component {
                   type="text"
                   value={city_district}
                 />
-               </td>
+                </td>
               </tr>
             )}
 
@@ -195,8 +196,8 @@ class AddLocation extends React.Component {
               type="text"
               value={address_street}
             />
-          <tr>
-           <td>     
+        <tr>
+          <td>
             <StyledLabel>City</StyledLabel>
             <Thirds
               id="address_city"
@@ -205,8 +206,8 @@ class AddLocation extends React.Component {
               type="text"
               value={address_city}
             />
-           </td>
-           <td style= {{ paddingLeft:'50px'}}>
+          </td>
+          <td style={{paddingLeft:"50px"}}>
             <StyledLabel>State</StyledLabel>
             <Thirds
               id="address_state"
@@ -215,8 +216,8 @@ class AddLocation extends React.Component {
               type="text"
               value={address_state}
             />
-           </td>
-           <td style= {{ paddingLeft:'50px'}}>
+          </td>
+          <td style={{paddingLeft:"50px"}}>
             <StyledLabel>Zip</StyledLabel>
             <Thirds
               id="address_zip"
@@ -225,13 +226,12 @@ class AddLocation extends React.Component {
               type="text"
               value={address_zip}
             />
-           </td> 
-          </tr>
-            
-          
+          </td>
+        </tr>  
+
             <FormSectionHeader name="Contact" />
-         <tr>
-          <td>
+          <tr>
+            <td>    
             <StyledLabel>First Name</StyledLabel>
             <TextInput
             id="contact_first_name"
@@ -248,7 +248,7 @@ class AddLocation extends React.Component {
             type="text"
             value={contact_phone_number}
             />
-             <StyledLabel>Relationship to Location</StyledLabel>
+            <StyledLabel>Relationship to Location</StyledLabel>
             <TextInput
             id="contact_relationship"
             name="contact_relationship"
@@ -266,7 +266,7 @@ class AddLocation extends React.Component {
             type="text"
             value={contact_last_name}
             />
-            
+
             <StyledLabel>Email</StyledLabel>
             <TextInput
             id="contact_email"
@@ -275,7 +275,7 @@ class AddLocation extends React.Component {
             type="text"
             value={contact_email}
             />
-           
+            
 
             <StyledLabel>Reference (if any)</StyledLabel>
             <TextInput
@@ -286,8 +286,7 @@ class AddLocation extends React.Component {
               value={reference}
             />
           </td>
-         </tr>
-
+          </tr>
             <br />
             <br />
             <SubmitButton onClick={this.handleClick} type="button">

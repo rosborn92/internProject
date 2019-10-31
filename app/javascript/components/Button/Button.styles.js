@@ -7,7 +7,6 @@ const StyledButton = styled.button`
     width: 230px;
     height: 65px;
     right: 75px;
-
     span { 
         color: white;
         font-family: ${props => props.theme.sansSerif};

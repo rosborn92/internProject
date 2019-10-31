@@ -13,8 +13,6 @@ const StyledInput = styled.input`
     height: 65px;
     margin-bottom: 40px;
     font-size: 25px;
-
-
 `;
 
 export { StyledInput };

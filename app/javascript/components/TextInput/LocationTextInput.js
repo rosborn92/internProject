@@ -12,7 +12,6 @@ const LocationStyledInput = styled.input`
     height: 78px;
     margin-bottom: 40px;
     font-size: 25px;
-
 `;
 
 export { LocationStyledInput };

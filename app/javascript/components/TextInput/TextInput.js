@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-// import React from "react";
-// import { StyledInput } from "./TextInput.styles";
-
 const TextInput = styled.input`
   /* position: absolute;
   left: ${props => props.theme.contentPaddingLeft};
