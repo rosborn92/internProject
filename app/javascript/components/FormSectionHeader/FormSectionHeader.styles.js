@@ -17,6 +17,7 @@ const StyledH3 = styled.h3`
     border-bottom: 1px solid ${props => props.theme.funBlue};
     bottom: 0;
     content: "";
+    display: block;
     left: ${props => props.theme.offsetContentPaddingLeft};
     position: absolute;
     width: calc(100% + ${props => props.theme.contentPaddingLeft});

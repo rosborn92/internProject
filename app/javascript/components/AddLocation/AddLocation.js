@@ -32,8 +32,8 @@ class AddLocation extends React.Component {
         contact_relationship: "",
         address_1: "",
         address_2: "",
-        address_city: "",
-        address_state: "",
+        address_city: "San Diego",
+        address_state: "CA",
         address_zip: "",
         phone_number: "",
         reference: "",
@@ -104,30 +104,32 @@ class AddLocation extends React.Component {
               </div>
               <div className="half">
                 <StyledLabel>Type</StyledLabel>
-                <RadioButton
-                  id="school"
-                  label="School"
-                  name="location_type"
-                  onChange={this.handleChange}
-                  type="radio"
-                  value="school"
-                />
-                <RadioButton
-                  id="non-school"
-                  label="Non-School"
-                  name="location_type"
-                  onChange={this.handleChange}
-                  type="radio"
-                  value="non-school"
-                />
-                <RadioButton
-                  id="corporate"
-                  label="Corporate"
-                  name="location_type"
-                  onChange={this.handleChange}
-                  type="radio"
-                  value="corporate"
-                />
+                <div className="radio">
+                  <RadioButton
+                    id="school"
+                    label="School"
+                    name="location_type"
+                    onChange={this.handleChange}
+                    type="radio"
+                    value="school"
+                  />
+                  <RadioButton
+                    id="non-school"
+                    label="Non-School"
+                    name="location_type"
+                    onChange={this.handleChange}
+                    type="radio"
+                    value="non-school"
+                  />
+                  <RadioButton
+                    id="corporate"
+                    label="Corporate"
+                    name="location_type"
+                    onChange={this.handleChange}
+                    type="radio"
+                    value="corporate"
+                  />
+                </div>
               </div>
 
               <div className="half">
@@ -319,13 +321,18 @@ class AddLocation extends React.Component {
                   value={reference}
                 />
               </div>
+
+              <div className="full align-right">
+                <SubmitButton
+                  id="button"
+                  onClick={this.handleClick}
+                  type="button"
+                >
+                  Submit
+                </SubmitButton>
+              </div>
+              {success && <Redirect to="/" />}
             </StyledFormLayout>
-            <br />
-            <br />
-            <SubmitButton id="button" onClick={this.handleClick} type="button">
-              Submit
-            </SubmitButton>
-            {success && <Redirect to="/" />}
           </form>
         </StyledSlideOutPanel>
       </>

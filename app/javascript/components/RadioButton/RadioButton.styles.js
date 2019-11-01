@@ -9,6 +9,7 @@ const StyledRadioButton = styled.label`
   font-family: ${props => props.theme.sansSerif};
   font-size: 1.6rem;
   line-height: 30px;
+  white-space: nowrap;
 
   input[type="radio"] + span {
     background: url(${uncheck}) left top no-repeat;
@@ -18,6 +19,8 @@ const StyledRadioButton = styled.label`
     padding-left: 40px;
     position: relative;
     margin-left: -15px;
+    margin-bottom: 10px;
+    minimum-height: 30px;
   }
 
   input[type="radio"]:checked + span {
