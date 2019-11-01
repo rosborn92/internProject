@@ -210,15 +210,6 @@ class AddLocation extends React.Component {
               value={address_1}
             />
 
-            <StyledLabel>Address 1</StyledLabel>
-            <TextInput
-              id="address_1"
-              name="address_1"
-              onChange={this.handleChange}
-              type="text"
-              value={address_1}
-            />
-
             <StyledLabel>Address 2</StyledLabel>
             <TextInput
               id="address_2"
