@@ -11,11 +11,11 @@ import {
   Header,
   FormSectionHeader,
   StyledSelect,
-  LocationStyledInput,
+  FullInput,
   RadioButton,
   SubmitButton,
-  TextInput,
-  Thirds
+  HalfInput,
+  ThirdInput
 } from "..";
 
 class AddLocation extends React.Component {
@@ -94,7 +94,7 @@ class AddLocation extends React.Component {
             <StyledFormLayout>
               <div className="full">
                 <StyledLabel>Location Name</StyledLabel>
-                <LocationStyledInput
+                <FullInput
                   id="name"
                   name="name"
                   onChange={this.handleChange}
@@ -132,7 +132,7 @@ class AddLocation extends React.Component {
 
               <div className="half">
                 <StyledLabel>Location Phone Number</StyledLabel>
-                <TextInput
+                <HalfInput
                   id="phone_number"
                   name="phone_number"
                   onChange={this.handleChange}
@@ -145,7 +145,7 @@ class AddLocation extends React.Component {
                 <>
                   <div className="third">
                     <StyledLabel>Principal Name</StyledLabel>
-                    <Thirds
+                    <ThirdInput
                       id="school_principal"
                       name="school_principal"
                       onChange={this.handleChange}
@@ -155,7 +155,7 @@ class AddLocation extends React.Component {
                   </div>
                   <div className="third">
                     <StyledLabel>Principal Email</StyledLabel>
-                    <Thirds
+                    <ThirdInput
                       id="principal_email"
                       name="principal_email"
                       onChange={this.handleChange}
@@ -165,7 +165,7 @@ class AddLocation extends React.Component {
                   </div>
                   <div className="third">
                     <StyledLabel>School District</StyledLabel>
-                    <Thirds
+                    <ThirdInput
                       id="school_district"
                       name="school_district"
                       onChange={this.handleChange}
@@ -178,7 +178,7 @@ class AddLocation extends React.Component {
                 <>
                   <div className="half">
                     <StyledLabel>County District</StyledLabel>
-                    <TextInput
+                    <HalfInput
                       id="county_district"
                       name="county_district"
                       onChange={this.handleChange}
@@ -188,7 +188,7 @@ class AddLocation extends React.Component {
                   </div>
                   <div className="half">
                     <StyledLabel>City District</StyledLabel>
-                    <TextInput
+                    <HalfInput
                       id="city_district"
                       name="city_district"
                       onChange={this.handleChange}
@@ -200,111 +200,126 @@ class AddLocation extends React.Component {
               )}
             </StyledFormLayout>
             <FormSectionHeader name="Address" />
-
-            <StyledLabel>Address 1</StyledLabel>
-            <TextInput
-              id="address_1"
-              name="address_1"
-              onChange={this.handleChange}
-              type="text"
-              value={address_1}
-            />
-
-            <StyledLabel>Address 2</StyledLabel>
-            <TextInput
-              id="address_2"
-              name="address_2"
-              onChange={this.handleChange}
-              type="text"
-              value={address_2}
-            />
-
-            <StyledLabel>City</StyledLabel>
-            <Thirds
-              id="address_city"
-              name="address_city"
-              onChange={this.handleChange}
-              type="text"
-              value={address_city}
-            />
-
-            <StyledLabel>State</StyledLabel>
-            <StyledSelect
-              id="address_state"
-              name="address_state"
-              onChange={this.handleChange}
-              value={address_state}
-            >
-              {States.map(option => (
-                <option value={option.abbreviation}>{option.state}</option>
-              ))}
-            </StyledSelect>
-
-            <StyledLabel>Zip</StyledLabel>
-            <Thirds
-              id="address_zip"
-              name="address_zip"
-              onChange={this.handleChange}
-              type="text"
-              value={address_zip}
-            />
-
+            <StyledFormLayout>
+              <div className="half">
+                <StyledLabel>Address 1</StyledLabel>
+                <HalfInput
+                  id="address_1"
+                  name="address_1"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={address_1}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Address 2</StyledLabel>
+                <HalfInput
+                  id="address_2"
+                  name="address_2"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={address_2}
+                />
+              </div>
+              <div className="third">
+                <StyledLabel>City</StyledLabel>
+                <ThirdInput
+                  id="address_city"
+                  name="address_city"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={address_city}
+                />
+              </div>
+              <div className="third">
+                <StyledLabel>State</StyledLabel>
+                <StyledSelect
+                  id="address_state"
+                  name="address_state"
+                  onChange={this.handleChange}
+                  value={address_state}
+                >
+                  {States.map((option, id) => (
+                    <option key={id} value={option.abbreviation}>
+                      {option.state}
+                    </option>
+                  ))}
+                </StyledSelect>
+              </div>
+              <div className="third">
+                <StyledLabel>Zip</StyledLabel>
+                <ThirdInput
+                  id="address_zip"
+                  name="address_zip"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={address_zip}
+                />
+              </div>
+            </StyledFormLayout>
             <FormSectionHeader name="Contact" />
-
-            <StyledLabel>First Name</StyledLabel>
-            <TextInput
-              id="contact_first_name"
-              name="contact_first_name"
-              onChange={this.handleChange}
-              type="text"
-              value={contact_first_name}
-            />
-
-            <StyledLabel>Last Name</StyledLabel>
-            <TextInput
-              id="contact_last_name"
-              name="contact_last_name"
-              onChange={this.handleChange}
-              type="text"
-              value={contact_last_name}
-            />
-
-            <StyledLabel>Phone Number</StyledLabel>
-            <TextInput
-              id="contact_phone_number"
-              name="contact_phone_number"
-              onChange={this.handleChange}
-              type="text"
-              value={contact_phone_number}
-            />
-
-            <StyledLabel>Email</StyledLabel>
-            <TextInput
-              id="contact_email"
-              name="contact_email"
-              onChange={this.handleChange}
-              type="text"
-              value={contact_email}
-            />
-
-            <StyledLabel>Relationship to Location</StyledLabel>
-            <TextInput
-              id="contact_relationship"
-              name="contact_relationship"
-              onChange={this.handleChange}
-              type="text"
-              value={contact_relationship}
-            />
-
-            <StyledLabel>Reference (if any)</StyledLabel>
-            <TextInput
-              id="reference"
-              name="reference"
-              onChange={this.handleChange}
-              type="text"
-              value={reference}
-            />
-
+            <StyledFormLayout>
+              <div className="half">
+                <StyledLabel>First Name</StyledLabel>
+                <HalfInput
+                  id="contact_first_name"
+                  name="contact_first_name"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_first_name}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Last Name</StyledLabel>
+                <HalfInput
+                  id="contact_last_name"
+                  name="contact_last_name"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_last_name}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Phone Number</StyledLabel>
+                <HalfInput
+                  id="contact_phone_number"
+                  name="contact_phone_number"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_phone_number}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Email</StyledLabel>
+                <HalfInput
+                  id="contact_email"
+                  name="contact_email"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_email}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Relationship to Location</StyledLabel>
+                <HalfInput
+                  id="contact_relationship"
+                  name="contact_relationship"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_relationship}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Reference (if any)</StyledLabel>
+                <HalfInput
+                  id="reference"
+                  name="reference"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={reference}
+                />
+              </div>
+            </StyledFormLayout>
             <br />
             <br />
             <SubmitButton id="button" onClick={this.handleClick} type="button">

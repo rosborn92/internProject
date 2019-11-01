@@ -6,11 +6,11 @@ import { Header } from "./Header";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
 import {
-  LocationStyledInput,
-  StyledSelect
-} from "./TextInput/LocationTextInput";
-import { TextInput } from "./TextInput/TextInput";
-import { Thirds } from "./TextInput/Thirds";
+  FullInput,
+  StyledSelect,
+  HalfInput,
+  ThirdInput
+} from "./TextInput/TextInput";
 
 export {
   App,
@@ -21,7 +21,7 @@ export {
   Header,
   Logo,
   RadioButton,
-  LocationStyledInput,
-  TextInput,
-  Thirds
+  FullInput,
+  HalfInput,
+  ThirdInput
 };

@@ -1,5 +1,3 @@
-import { LocationStyledInput } from "./LocationTextInput";
-import { TextInput } from "./TextInput";
-import { Thirds } from "./Thirds";
+import { FullInput, StyledSelect, HalfInput, ThirdInput } from "./TextInput";
 
-export { TextInput, LocationStyledInput, Thirds };
+export { HalfInput, FullInput, StyledSelect, ThirdInput };
