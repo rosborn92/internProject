@@ -9,7 +9,9 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2019_10_24_162819) do
+
+ActiveRecord::Schema.define(version: 2019_10_31_210254) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,11 +31,10 @@ ActiveRecord::Schema.define(version: 2019_10_24_162819) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "location_type"
-    t.string "contact_name"
+    t.string "contact_first_name"
     t.string "contact_phone_number"
     t.string "contact_email"
     t.string "contact_relationship"
-    t.string "address_street"
     t.string "address_city"
     t.string "address_state"
     t.integer "address_zip"
@@ -46,6 +47,9 @@ ActiveRecord::Schema.define(version: 2019_10_24_162819) do
     t.string "city_district"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "contact_last_name"
+    t.string "address_1"
+    t.string "address_2"
   end
 
   add_foreign_key "bookings", "locations"

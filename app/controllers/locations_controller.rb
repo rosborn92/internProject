@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     @locations = Location.all
     render json: @locations
@@ -10,7 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.create(location_params)
+    @location = Location.create location_params
     render json: @location
   end
 
@@ -33,8 +35,9 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:name, :location_type, :contact_name,
                                      :contact_phone_number, :contact_email, :contact_relationship,
-                                     :address_street, :address_city, :address_state, :address_zip,
-                                     :phone_number, :reference, :school_principal, :principal_email,
-                                     :school_district, :county_district, :city_district)
+                                     :address_1, :address_2, :address_city, :address_state,
+                                     :address_zip, :phone_number, :reference,
+                                     :school_principal, :principal_email, :school_district,
+                                     :county_district, :city_district)
   end
 end
