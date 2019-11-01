@@ -9,7 +9,7 @@ RSpec.describe BookingsController, type: :controller do
     end
 
     it 'checks bookings being created in the response' do
-      Booking.create(location_id: location.id, contact_name: "Nico")
+      Booking.create(location_id: location.id, contact_first_name: "Nico")
       get :index
       expect(response.body).to include("Nico") # response.success?
     end
@@ -18,23 +18,23 @@ RSpec.describe BookingsController, type: :controller do
   context 'POST #create' do
     it 'can create a booking' do
       post :create, params: { booking: { location_id: location.id,
-                                         contact_name: "Nico" }, format: :json }
+                                         contact_first_name: "Nico" }, format: :json }
       expect(response.body).to include("Nico") # response.success?
     end
   end
 
   context 'PUT #update' do
     it 'can update a booking' do
-      @booking = Booking.create(location_id: location.id, contact_name: "Nico")
+      @booking = Booking.create(location_id: location.id, contact_first_name: "Nico")
       patch :update, params: { id: @booking.id, booking:
-           { contact_name: "Adam" }, format: :json }
+           { contact_first_name: "Adam" }, format: :json }
       expect(response.body).to include("Adam")
     end
   end
 
   context 'DELETE #delete' do
     it 'can delete a booking' do
-      @booking = Booking.create(location_id: location.id, contact_name: "Nico")
+      @booking = Booking.create(location_id: location.id, contact_first_name: "Nico")
       expect do
         delete :destroy, params: { location_id: location.id, id: @booking.id }
       end.to change {

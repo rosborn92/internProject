@@ -8,7 +8,8 @@ class AddBooking extends React.Component {
       form: {
         location: "",
         date: "",
-        contact_name: "",
+        contact_first_name: "",
+        contact_last_name: "",
         contact_phone_number: "",
         contact_email: "",
         contact_relationship: ""
@@ -34,7 +35,8 @@ class AddBooking extends React.Component {
     const {
       location,
       date,
-      contact_name,
+      contact_first_name,
+      contact_last_name,
       contact_phone_number,
       contact_email,
       contact_relationship
@@ -62,12 +64,19 @@ class AddBooking extends React.Component {
           type="date"
           value={date}
         />
-        <p>Enter Contact Name:</p>
+        <p>Enter Contact First Name:</p>
         <input
-          name="contact_name"
+          name="contact_first_name"
           onChange={this.handleChange}
           type="text"
-          value={contact_name}
+          value={contact_first_name}
+        />
+        <p>Enter Contact Last Name:</p>
+        <input
+          name="contact_last_name"
+          onChange={this.handleChange}
+          type="text"
+          value={contact_last_name}
         />
         <p>Enter Contact Phone Number:</p>
         <input
