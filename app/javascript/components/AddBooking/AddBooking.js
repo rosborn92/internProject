@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable react/state-in-constructor */
 import React from "react";
 import { Redirect } from "react-router-dom";
 
