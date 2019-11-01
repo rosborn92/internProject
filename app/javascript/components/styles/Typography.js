@@ -8,6 +8,7 @@ const StyledLabel = styled.label`
   font-size: 1.6rem;
   font-weight: ${props => props.theme.weightBold};
   padding-top: 40px;
+  margin-bottom: 3px;
 `;
 
 export { StyledLabel };
