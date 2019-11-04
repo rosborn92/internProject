@@ -2,8 +2,9 @@ import React from "react";
 
 import { StyledButton } from "./Button.styles";
 
-const SubmitButton = () => (
-  <StyledButton>
+const SubmitButton = ({ onClick }) => (
+  <StyledButton
+    onClick={onClick} >
     <span>SUBMIT</span>
   </StyledButton>
 );
