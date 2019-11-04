@@ -111,4 +111,4 @@ class AddBooking extends React.Component {
     );
   }
 }
-export default AddBooking;
+export { AddBooking };

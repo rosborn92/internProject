@@ -15,6 +15,9 @@ const NavBar = () => (
       <li>
         <Link to="/AddLocation">Add Location</Link>
       </li>
+      <li>
+        <Link to="/AddBooking">Add Booking</Link>
+      </li>
     </ol>
     <ol className="btm-nav">
       <li>

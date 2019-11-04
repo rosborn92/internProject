@@ -13,7 +13,12 @@ class Home extends React.Component {
     return (
       <>
         {this.props.locations.map(location => {
-          return <p key={location.id}>Location: {location.name}</p>;
+          return (
+            <div key={location.id} style={{border:"1px black solid"}}>
+              <p>Location: {location.name}</p>
+              <p>Location: {location.contact_first_name}</p>
+            </div>
+          )
         })}
       </>
     );

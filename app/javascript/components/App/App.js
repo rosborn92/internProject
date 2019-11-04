@@ -5,10 +5,22 @@ import styled, { ThemeProvider } from "styled-components/macro";
 
 import { Home } from "../../Pages/Home";
 import { AddLocation } from "../AddLocation";
+import { AddBooking } from "../AddBooking";
 import { getLocations, createLocation } from "../api";
 import { NavBar } from "../NavBar";
 import GlobalStyle from "../styles/Global";
 import Theme from "../styles/Theme";
+
+import {
+  Header,
+  FormSectionHeader,
+  StyledSelect,
+  FullInput,
+  RadioButton,
+  SubmitButton,
+  HalfInput,
+  ThirdInput
+} from "..";
 
 import { StyledLayout } from "./App.styles";
 
@@ -40,11 +52,6 @@ class App extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevState) {
-  //     if(prevState.locations != this.state.locations) {
-  //         this.setState({success: false})
-  //     }
-  // }
 
   render() {
     const { locations } = this.state;
@@ -77,6 +84,21 @@ class App extends React.Component {
                 render={props => {
                   return (
                     <Home
+                      {...props}
+                      changeSuccess={this.changeSuccess}
+                      locations={this.state.locations}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
+
+              <Route
+                exact
+                path="/AddBooking"
+                render={props => {
+                  return (
+                    <AddBooking
                       {...props}
                       changeSuccess={this.changeSuccess}
                       locations={this.state.locations}

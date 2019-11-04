@@ -1,3 +1,3 @@
-// import { AddBooking } from "./AddBooking";
+import { AddBooking } from "./AddBooking";
 
-// export { AddBooking };
+export { AddBooking };

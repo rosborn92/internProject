@@ -11,11 +11,11 @@ const createLocation = function(attributes) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ location: attributes })
-  }).then(resp => {
-    const json = resp.json();
-
-    return json;
-  });
+  })
+  .then(resp => {
+    const json = resp.json()
+    return json
+  })
 };
 
 export { getLocations, createLocation };
