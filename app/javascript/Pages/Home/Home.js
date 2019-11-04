@@ -10,13 +10,7 @@ class Home extends React.Component {
   }
 
   render() {
-    return (
-      <>
-        {this.props.locations.map(location => {
-          return <p key={location.id}>Location: {location.name}</p>;
-        })}
-      </>
-    );
+    return <p>Dashboard</p>;
   }
 }
 export { Home };

@@ -321,7 +321,6 @@ class AddLocation extends React.Component {
                   value={reference}
                 />
               </div>
-
               <div className="full align-right">
                 <SubmitButton
                   id="button"
@@ -331,7 +330,7 @@ class AddLocation extends React.Component {
                   Submit
                 </SubmitButton>
               </div>
-              {success && <Redirect to="/" />}
+              // {success && <Redirect to="/" />}
             </StyledFormLayout>
           </form>
         </StyledSlideOutPanel>

@@ -18,10 +18,10 @@ const NavBar = () => (
     </ol>
     <ol className="btm-nav">
       <li>
-        <Link>Settings</Link>
+        <Link to="">Settings</Link>
       </li>
       <li>
-        <Link>Logout</Link>
+        <Link to="">Logout</Link>
       </li>
     </ol>
   </StyledAside>
