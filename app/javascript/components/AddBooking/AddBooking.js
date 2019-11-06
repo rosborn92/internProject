@@ -17,13 +17,12 @@ class AddBooking extends React.Component {
     super(props);
     this.state = {
       form: {
-        location: "",
-        date: "",
         contact_first_name: "",
         contact_last_name: "",
         contact_phone_number: "",
         contact_email: "",
-        contact_relationship: ""
+        contact_relationship: "",
+        reference:""
       }
     };
   }
@@ -38,14 +37,11 @@ class AddBooking extends React.Component {
 
   handleClick = () => {
     const { form } = this.state;
-
-    this.props.handleNewLocation(form);
+    this.props.handleNewBooking(form);
   };
 
   render() {
     const {
-      location,
-      date,
       contact_first_name,
       contact_last_name,
       contact_phone_number,
@@ -115,7 +111,7 @@ class AddBooking extends React.Component {
             <div className= "full align-right">
               <SaveBookingButton
                 id="button"
-                onClick={this.handleClick}
+                onClick= {this.handleClick}
                 type="button"
               >
                 SAVE BOOKING

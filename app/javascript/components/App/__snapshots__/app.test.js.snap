@@ -50,6 +50,11 @@ exports[`App renders the component correctly 1`] = `
           path="/"
           render={[Function]}
         />
+        <Route
+          exact={true}
+          path="/AddBooking"
+          render={[Function]}
+        />
       </main>
     </BrowserRouter>
   </styled.div>
