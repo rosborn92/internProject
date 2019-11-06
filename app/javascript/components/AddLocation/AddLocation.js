@@ -49,12 +49,14 @@ class AddLocation extends React.Component {
   handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
+
     form[name] = value;
     this.setState({ form });
   };
 
   handleClick = () => {
     const { form } = this.state;
+
     this.props.handleNewLocation(form);
   };
 

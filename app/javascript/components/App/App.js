@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components/macro";
 
 import { Home } from "../../Pages/Home";
-import { AddLocation } from "../AddLocation";
 import { AddBooking } from "../AddBooking";
+import { AddLocation } from "../AddLocation";
 import { getLocations, createLocation } from "../api";
 import { NavBar } from "../NavBar";
 import GlobalStyle from "../styles/Global";
 import Theme from "../styles/Theme";
+
+import { StyledLayout } from "./App.styles";
 
 import {
   Header,
@@ -23,8 +25,6 @@ import {
   HalfInput,
   ThirdInput
 } from "..";
-
-import { StyledLayout } from "./App.styles";
 
 class App extends React.Component {
   constructor(props) {
@@ -53,7 +53,6 @@ class App extends React.Component {
       this.setState({ locations });
     });
   }
-
 
   render() {
     const { locations } = this.state;

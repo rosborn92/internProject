@@ -23,7 +23,7 @@ class AddBooking extends React.Component {
         contact_phone_number: "",
         contact_email: "",
         contact_relationship: "",
-        reference:""
+        reference: ""
       }
     };
   }
@@ -38,6 +38,7 @@ class AddBooking extends React.Component {
 
   handleClick = () => {
     const { form } = this.state;
+
     this.props.handleNewBooking(form);
   };
 
@@ -56,71 +57,71 @@ class AddBooking extends React.Component {
       <>
         <AddBookingHeader name="Add a Booking" />
         <StyledSlideOutPanel>
-        <FormSectionHeader name="BOOKING CONTACT" />
+          <FormSectionHeader name="BOOKING CONTACT" />
           <form>
             <StyledFormLayout>
-              <div className= "half">
+              <div className="half">
                 <StyledLabel>First Name</StyledLabel>
                 <HalfInput
-                  id= "contact_first_name"
-                  name= "contact_first_name"
+                  id="contact_first_name"
+                  name="contact_first_name"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_first_name}
                 />
               </div>
-              <div className= "half">
-               <StyledLabel>Last Name</StyledLabel>
-               <HalfInput
-                 id= "contact_last_name"
-                 name="contact_last_name"
-                 onChange={this.handleChange}
-                 type="text"
-                 value={contact_last_name}
-               />
-             </div>
-             <div className= "half">
-               <StyledLabel>Enter Contact Phone Number</StyledLabel>
-               <HalfInput
-                 id="contact_phone_number"
-                 name="contact_phone_number"
-                 onChange={this.handleChange}
-                 type="text"
-                 value={contact_phone_number}
-               />
-             </div>
-             <div className= "half">
-              <StyledLabel>Enter Contact Email</StyledLabel>
-              <HalfInput
-                id="contact_email"
-                name="contact_email"
-                onChange={this.handleChange}
-                type="text"
-                value={contact_email}
-              />
-            </div>
-            <div className= "half">
-              <StyledLabel>Relationship to Location</StyledLabel>
-              <HalfInput
-                id="contact_relationship"
-                name="contact_relationship"
-                onChange={this.handleChange}
-                type="text"
-                value={contact_relationship}
-              />
-            </div>
-            <div className= "full align-right">
-              <SaveBookingButton
-                id="button"
-                onClick= {this.handleClick}
-                type="button"
-              >
-                SAVE BOOKING
-              </SaveBookingButton>
-            </div>
-            {success && <Redirect to="/" />}
-          </StyledFormLayout>
-         </form>
+              <div className="half">
+                <StyledLabel>Last Name</StyledLabel>
+                <HalfInput
+                  id="contact_last_name"
+                  name="contact_last_name"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_last_name}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Enter Contact Phone Number</StyledLabel>
+                <HalfInput
+                  id="contact_phone_number"
+                  name="contact_phone_number"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_phone_number}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Enter Contact Email</StyledLabel>
+                <HalfInput
+                  id="contact_email"
+                  name="contact_email"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_email}
+                />
+              </div>
+              <div className="half">
+                <StyledLabel>Relationship to Location</StyledLabel>
+                <HalfInput
+                  id="contact_relationship"
+                  name="contact_relationship"
+                  onChange={this.handleChange}
+                  type="text"
+                  value={contact_relationship}
+                />
+              </div>
+              <div className="full align-right">
+                <SaveBookingButton
+                  id="button"
+                  onClick={this.handleClick}
+                  type="button"
+                >
+                  SAVE BOOKING
+                </SaveBookingButton>
+              </div>
+              {success && <Redirect to="/" />}
+            </StyledFormLayout>
+          </form>
         </StyledSlideOutPanel>
       </>
     );

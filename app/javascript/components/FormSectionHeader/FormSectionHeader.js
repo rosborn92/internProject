@@ -1,6 +1,7 @@
 import React from "react";
 
 import { StyledH3 } from "./FormSectionHeader.styles";
+
 const FormSectionHeader = ({ name }) => (
   <>
     <br />
@@ -8,4 +9,4 @@ const FormSectionHeader = ({ name }) => (
   </>
 );
 
-export { FormSectionHeader};
+export { FormSectionHeader };

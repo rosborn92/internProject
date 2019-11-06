@@ -38,8 +38,9 @@ describe("Test handlechange component", () => {
     const app = shallow(<AddBooking handleNewBooking={mockCallBack} />);
     const newName = "drew";
 
-    app.find("#contact_first_name")
-       .simulate("change", { target: { name: "contact_first_name", value: newName } });
+    app.find("#contact_first_name").simulate("change", {
+      target: { name: "contact_first_name", value: newName }
+    });
     app.find("#button").simulate("click");
     expect(mockCallBack.mock.calls[0]).toEqual([
       {

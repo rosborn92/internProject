@@ -14,7 +14,6 @@ const StyledH3 = styled.h3`
   position: relative;
   margin-top: -40px;
 
-
   &:before {
     border-bottom: 1px solid ${props => props.theme.funBlue};
     bottom: 0;

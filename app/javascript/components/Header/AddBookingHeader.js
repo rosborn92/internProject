@@ -6,7 +6,6 @@ const AddBookingHeader = ({ name }) => (
   <AddBookingStyledHeader>
     <h1>{name}</h1>
   </AddBookingStyledHeader>
-
 );
 
-export { AddBookingHeader};
+export { AddBookingHeader };
