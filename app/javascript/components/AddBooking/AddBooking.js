@@ -1,6 +1,7 @@
 import { textInputs } from "polished";
 import React from "react";
 import { Redirect } from "react-router-dom";
+
 import { StyledFormLayout } from "../styles/Forms";
 import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
@@ -9,7 +10,7 @@ import {
   AddBookingHeader,
   FormSectionHeader,
   SaveBookingButton,
-  HalfInput,
+  HalfInput
 } from "..";
 
 class AddBooking extends React.Component {
