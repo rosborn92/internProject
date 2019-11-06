@@ -25,4 +25,13 @@ const StyledH3 = styled.h3`
   }
 `;
 
-export { StyledH3 };
+const StyledSubHeader = styled.header`
+  font-family: ${props => props.theme.georgia};
+  font-size: 18px;
+  font-style: italic;
+  line-height: 20px;
+  color: #000000
+  padding-left: 4px;
+`;
+
+export { StyledH3, StyledSubHeader };

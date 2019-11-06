@@ -10,7 +10,7 @@ import {
   AddBookingHeader,
   FormSectionHeader,
   SaveBookingButton,
-  HalfInput
+  BookingInput
 } from "..";
 
 class AddBooking extends React.Component {
@@ -62,52 +62,57 @@ class AddBooking extends React.Component {
             <StyledFormLayout>
               <div className="half">
                 <StyledLabel>First Name</StyledLabel>
-                <HalfInput
+                <BookingInput
                   id="contact_first_name"
                   name="contact_first_name"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_first_name}
+                  placeholder = "First Name"
                 />
               </div>
               <div className="half">
                 <StyledLabel>Last Name</StyledLabel>
-                <HalfInput
+                <BookingInput
                   id="contact_last_name"
                   name="contact_last_name"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_last_name}
+                  placeholder= "Last Name"
                 />
               </div>
               <div className="half">
                 <StyledLabel>Enter Contact Phone Number</StyledLabel>
-                <HalfInput
+                <BookingInput
                   id="contact_phone_number"
                   name="contact_phone_number"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_phone_number}
+                  placeholder= "(xxx) xxx-xxxx"
                 />
               </div>
               <div className="half">
                 <StyledLabel>Enter Contact Email</StyledLabel>
-                <HalfInput
+                <BookingInput
                   id="contact_email"
                   name="contact_email"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_email}
+                  placeholder= "example@email.com"
                 />
               </div>
               <div className="half">
                 <StyledLabel>Relationship to Location</StyledLabel>
-                <HalfInput
+                <BookingInput
                   id="contact_relationship"
                   name="contact_relationship"
                   onChange={this.handleChange}
                   type="text"
                   value={contact_relationship}
+                  placeholder=" Event Coordinator"
                 />
               </div>
               <div className="full align-right">

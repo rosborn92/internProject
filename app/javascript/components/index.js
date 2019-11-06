@@ -11,6 +11,7 @@ import {
   FullInput,
   StyledSelect,
   HalfInput,
+  BookingInput,
   ThirdInput
 } from "./TextInput/TextInput";
 
@@ -29,5 +30,6 @@ export {
   RadioButton,
   FullInput,
   HalfInput,
+  BookingInput,
   ThirdInput
 };
