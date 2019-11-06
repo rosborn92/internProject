@@ -12,6 +12,8 @@ const StyledH3 = styled.h3`
   letter-spacing: 0.15rem;
   padding-bottom: 12px;
   position: relative;
+  margin-top: -40px;
+
 
   &:before {
     border-bottom: 1px solid ${props => props.theme.funBlue};
