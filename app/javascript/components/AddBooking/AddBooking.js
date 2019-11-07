@@ -1,10 +1,12 @@
 import { textInputs } from "polished";
 import React from "react";
 import { Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { StyledFormLayout } from "../styles/Forms";
 import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
+import { Icon } from "../Icon"
 
 import {
   AddBookingHeader,
@@ -28,6 +30,10 @@ class AddBooking extends React.Component {
     };
   }
 
+  static defaultProps= {
+    location_id: "JSC Innovation Lab"
+  }
+
   handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
@@ -44,18 +50,23 @@ class AddBooking extends React.Component {
 
   render() {
     const {
+      success,
+     } = this.props;
+
+    const {
       contact_first_name,
       contact_last_name,
       contact_phone_number,
       contact_email,
-      contact_relationship
-    } = this.state;
-    const { success } = this.props;
+      contact_relationship,
+      reference
+         } =this.state;
 
     console.log(this.state.form);
     return (
       <>
-        <AddBookingHeader name="Add a Booking" />
+        <AddBookingHeader location_id= {this.props.location_id} name="Add a Booking"  />
+
         <StyledSlideOutPanel>
           <FormSectionHeader name="BOOKING CONTACT" />
           <form>
@@ -83,7 +94,7 @@ class AddBooking extends React.Component {
                 />
               </div>
               <div className="half">
-                <StyledLabel>Enter Contact Phone Number</StyledLabel>
+                <StyledLabel>Phone Number</StyledLabel>
                 <BookingInput
                   id="contact_phone_number"
                   name="contact_phone_number"
@@ -94,7 +105,7 @@ class AddBooking extends React.Component {
                 />
               </div>
               <div className="half">
-                <StyledLabel>Enter Contact Email</StyledLabel>
+                <StyledLabel>Email Address</StyledLabel>
                 <BookingInput
                   id="contact_email"
                   name="contact_email"

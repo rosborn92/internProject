@@ -29,11 +29,10 @@ const LocationIdHeader = styled.header`
   color: ${props => props.theme.pureWhite};
   font-family: ${props => props.theme.nunito};
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
   padding-top:20px;
   margin-left: 35px
-
 `;
 
 

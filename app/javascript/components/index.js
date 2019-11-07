@@ -7,6 +7,7 @@ import { FormSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header } from "./Header";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
+import { Icon } from "./Icon";
 import {
   FullInput,
   StyledSelect,
@@ -27,9 +28,11 @@ export {
   AddBookingHeader,
   Header,
   Logo,
+  Icon,
   RadioButton,
   FullInput,
   HalfInput,
   BookingInput,
   ThirdInput
+
 };
