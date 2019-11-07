@@ -3,7 +3,7 @@ import { AddLocation } from "./AddLocation";
 // import { Home } from "../../Pages/Home/Home";
 import { App } from "./App";
 import { SubmitButton, SaveBookingButton } from "./Buttons";
-import { FormSectionHeader } from "./FormSectionHeader";
+import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header } from "./Header";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
@@ -25,6 +25,7 @@ export {
   // Home,
   StyledSelect,
   FormSectionHeader,
+  BookingSectionHeader,
   AddBookingHeader,
   Header,
   Logo,

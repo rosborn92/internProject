@@ -1,3 +1,3 @@
-import { FormSectionHeader } from "./FormSectionHeader";
+import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 
-export { FormSectionHeader };
+export { FormSectionHeader, BookingSectionHeader };

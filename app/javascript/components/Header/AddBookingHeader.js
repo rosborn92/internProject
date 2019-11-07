@@ -15,7 +15,7 @@ const AddBookingHeader = ({ name, location_id }) => (
       {location_id}
       <span style={{ marginLeft: "20px" }}>
         {" "}
-        <Icon height="12" name="vector" width="20" />{" "}
+        <Icon height="14" name="vector" width="20" />{" "}
       </span>
     </LocationIdHeader>
   </AddBookingStyledHeader>

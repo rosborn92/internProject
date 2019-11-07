@@ -7,17 +7,13 @@ import {
   Link
 } from "react-router-dom";
 
+import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
 import { StyledFormLayout } from "../styles/Forms";
-import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
+import { BookingSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
 
-import {
-  AddBookingHeader,
-  FormSectionHeader,
-  SaveBookingButton,
-  BookingInput
-} from "..";
+import { AddBookingHeader, SaveBookingButton, BookingInput } from "..";
 
 class AddBooking extends React.Component {
   constructor(props) {
@@ -72,8 +68,8 @@ class AddBooking extends React.Component {
           name="Add a Booking"
         />
 
-        <StyledSlideOutPanel>
-          <FormSectionHeader name="BOOKING CONTACT" />
+        <BookingSlideOutPanel>
+          <BookingSectionHeader name="BOOKING CONTACT" />
           <form>
             <StyledFormLayout>
               <div className="half">
@@ -143,7 +139,7 @@ class AddBooking extends React.Component {
               {success && <Redirect to="/" />}
             </StyledFormLayout>
           </form>
-        </StyledSlideOutPanel>
+        </BookingSlideOutPanel>
       </>
     );
   }

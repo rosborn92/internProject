@@ -12,7 +12,7 @@ const StyledH3 = styled.h3`
   letter-spacing: 0.15rem;
   padding-bottom: 12px;
   position: relative;
-  margin-top: -40px;
+  margin-top: -70px;
 
   &:before {
     border-bottom: 1px solid ${props => props.theme.funBlue};
@@ -30,8 +30,7 @@ const StyledSubHeader = styled.header`
   font-size: 18px;
   font-style: italic;
   line-height: 20px;
-  color: #000000
-  padding-left: 4px;
+  color: #000000;
 `;
 
 export { StyledH3, StyledSubHeader };

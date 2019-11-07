@@ -24,6 +24,8 @@ const Theme = {
   georgia: "georgia, serif",
   sansSerif: "Nunito Sans, sansSerif",
   serif: "georgia, serif",
+  weightExtraLight: 200,
+  weightLight: 300,
   weightRegular: 400,
   weightBold: 700,
   weightBlack: 900,

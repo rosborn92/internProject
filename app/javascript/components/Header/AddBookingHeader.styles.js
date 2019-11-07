@@ -3,8 +3,7 @@ import styled from "styled-components";
 const AddBookingStyledHeader = styled.header`
   background-color: ${props => props.theme.funBlue};
   border-radius: 0px 0px 0 30px;
-  height: 250px;
-  position: relative;
+  padding: 40px 30px 90px;
 
   h1 {
     color: ${props => props.theme.broom};
@@ -13,7 +12,8 @@ const AddBookingStyledHeader = styled.header`
     text-transform: uppercase;
     font-size: 38px;
     line-height: 52px;
-    padding: 45px 35px 5px;
+    margin: 0;
+    padding: 0 0 0 37px;
   }
 
   hr {
@@ -27,7 +27,7 @@ const AddBookingStyledHeader = styled.header`
 const LocationIdHeader = styled.header`
   color: ${props => props.theme.pureWhite};
   font-family: ${props => props.theme.nunito};
-  font-weight: 300;
+  font-weight: 200;
   font-size: 18px;
   line-height: 25px;
   padding-top: 20px;

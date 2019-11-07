@@ -28,6 +28,8 @@ exports[`App renders the component correctly 1`] = `
       "warning": "#f7df5a",
       "weightBlack": 900,
       "weightBold": 700,
+      "weightExtraLight": 200,
+      "weightLight": 300,
       "weightRegular": 400,
       "white": "#eeeeee",
       "whiteSmoke": "#f5f5f5",
