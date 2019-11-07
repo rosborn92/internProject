@@ -36,4 +36,4 @@ class BookingsController < ApplicationController
                                     :contact_relationship_to_location,
                                     :location_id)
   end
-end 
+end
