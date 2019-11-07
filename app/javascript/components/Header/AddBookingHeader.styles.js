@@ -20,8 +20,7 @@ const AddBookingStyledHeader = styled.header`
     width: 1210px;
     color: #0000;
     style: solid;
-    margin-left:35px
-
+    margin-left: 35px;
   }
 `;
 
@@ -31,12 +30,8 @@ const LocationIdHeader = styled.header`
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  padding-top:20px;
-  margin-left: 35px
+  padding-top: 20px;
+  margin-left: 35px;
 `;
-
-
-
-
 
 export { AddBookingStyledHeader, LocationIdHeader };

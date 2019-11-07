@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BookingInput = styled.input `
+const BookingInput = styled.input`
   /* position: absolute;
   left: ${props => props.theme.contentPaddingLeft};
   right: 0%;

@@ -1,12 +1,16 @@
 import { textInputs } from "polished";
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  Redirect,
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
 
+import { Icon } from "../Icon";
 import { StyledFormLayout } from "../styles/Forms";
 import { StyledSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
-import { Icon } from "../Icon"
 
 import {
   AddBookingHeader,
@@ -30,9 +34,9 @@ class AddBooking extends React.Component {
     };
   }
 
-  static defaultProps= {
+  static defaultProps = {
     location_id: "JSC Innovation Lab"
-  }
+  };
 
   handleChange = e => {
     const { form } = this.state;
@@ -49,9 +53,7 @@ class AddBooking extends React.Component {
   };
 
   render() {
-    const {
-      success,
-     } = this.props;
+    const { success } = this.props;
 
     const {
       contact_first_name,
@@ -60,12 +62,15 @@ class AddBooking extends React.Component {
       contact_email,
       contact_relationship,
       reference
-         } =this.state;
+    } = this.state;
 
     console.log(this.state.form);
     return (
       <>
-        <AddBookingHeader location_id= {this.props.location_id} name="Add a Booking"  />
+        <AddBookingHeader
+          location_id={this.props.location_id}
+          name="Add a Booking"
+        />
 
         <StyledSlideOutPanel>
           <FormSectionHeader name="BOOKING CONTACT" />
@@ -77,9 +82,9 @@ class AddBooking extends React.Component {
                   id="contact_first_name"
                   name="contact_first_name"
                   onChange={this.handleChange}
+                  placeholder="First Name"
                   type="text"
                   value={contact_first_name}
-                  placeholder = "First Name"
                 />
               </div>
               <div className="half">
@@ -88,9 +93,9 @@ class AddBooking extends React.Component {
                   id="contact_last_name"
                   name="contact_last_name"
                   onChange={this.handleChange}
+                  placeholder="Last Name"
                   type="text"
                   value={contact_last_name}
-                  placeholder= "Last Name"
                 />
               </div>
               <div className="half">
@@ -99,9 +104,9 @@ class AddBooking extends React.Component {
                   id="contact_phone_number"
                   name="contact_phone_number"
                   onChange={this.handleChange}
+                  placeholder="(xxx) xxx-xxxx"
                   type="text"
                   value={contact_phone_number}
-                  placeholder= "(xxx) xxx-xxxx"
                 />
               </div>
               <div className="half">
@@ -110,9 +115,9 @@ class AddBooking extends React.Component {
                   id="contact_email"
                   name="contact_email"
                   onChange={this.handleChange}
+                  placeholder="example@email.com"
                   type="text"
                   value={contact_email}
-                  placeholder= "example@email.com"
                 />
               </div>
               <div className="half">
@@ -121,9 +126,9 @@ class AddBooking extends React.Component {
                   id="contact_relationship"
                   name="contact_relationship"
                   onChange={this.handleChange}
+                  placeholder=" Event Coordinator"
                   type="text"
                   value={contact_relationship}
-                  placeholder=" Event Coordinator"
                 />
               </div>
               <div className="full align-right">

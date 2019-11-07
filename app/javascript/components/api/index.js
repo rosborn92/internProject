@@ -16,21 +16,21 @@ const createLocation = function(attributes) {
 
     return json;
   });
-}
+};
 
 const viewLocation = function(id) {
-    return fetch(`/locations/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
-        })
-        .then(resp => {
-          if(resp.status === 200){
-            const json = resp.json();
-              return json;
-        }
-      })
+  return fetch(`/locations/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
     }
+  }).then(resp => {
+    if (resp.status === 200) {
+      const json = resp.json();
+
+      return json;
+    }
+  });
+};
 
 export { viewLocation, getLocations, createLocation };

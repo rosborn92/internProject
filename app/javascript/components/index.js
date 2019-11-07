@@ -5,9 +5,9 @@ import { App } from "./App";
 import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header } from "./Header";
+import { Icon } from "./Icon";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
-import { Icon } from "./Icon";
 import {
   FullInput,
   StyledSelect,
@@ -34,5 +34,4 @@ export {
   HalfInput,
   BookingInput,
   ThirdInput
-
 };
