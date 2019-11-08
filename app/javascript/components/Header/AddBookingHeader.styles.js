@@ -17,10 +17,11 @@ const AddBookingStyledHeader = styled.header`
   }
 
   hr {
-    width: 1210px;
+    width: 100%;
     color: #0000;
     style: solid;
     margin-left: 35px;
+    display: inline-block;
   }
 `;
 
