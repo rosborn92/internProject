@@ -22,6 +22,7 @@ const BookingSlideOutPanel = styled.div`
   position: relative;
   margin-left: 60px;
   margin-top: -65px;
+  height: 100vmin;
 `;
 
 export { StyledSlideOutPanel, BookingSlideOutPanel };
