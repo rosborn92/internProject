@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import { Icon } from "../Icon";
@@ -7,12 +8,12 @@ import {
   LocationIdHeader
 } from "./AddBookingHeader.styles";
 
-const AddBookingHeader = ({ name, location_id }) => (
+const AddBookingHeader = ({ name, location_name }) => (
   <AddBookingStyledHeader>
     <h1>{name}</h1>
     <hr />
     <LocationIdHeader>
-      {location_id}
+      {location_name}
       <span style={{ marginLeft: "20px" }}>
         {" "}
         <Icon height="14" name="vector" width="20" />{" "}
@@ -21,4 +22,8 @@ const AddBookingHeader = ({ name, location_id }) => (
   </AddBookingStyledHeader>
 );
 
+AddBookingHeader.propTypes = {
+  location_name: PropTypes.string,
+  name: PropTypes.string
+};
 export { AddBookingHeader };

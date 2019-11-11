@@ -19,7 +19,6 @@ const Vector = ({ className, height, width }) => (
 Vector.propTypes = {
   className: PropTypes.string,
   height: PropTypes.string,
-  paddingLeft: PropTypes.string,
   width: PropTypes.string
 };
 

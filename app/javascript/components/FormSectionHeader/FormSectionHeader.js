@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import { StyledH3, StyledSubHeader } from "./FormSectionHeader.styles";
@@ -19,4 +20,7 @@ const BookingSectionHeader = ({ name }) => (
   </>
 );
 
+BookingSectionHeader.propTypes = {
+  name: PropTypes.string
+};
 export { FormSectionHeader, BookingSectionHeader };
