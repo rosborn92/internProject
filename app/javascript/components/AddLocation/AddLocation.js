@@ -326,7 +326,7 @@ class AddLocation extends React.Component {
                   onClick={this.handleClick}
                   type="button"
                 >
-                  Submit
+                  Save
                 </SubmitButton>
               </div>
             </StyledFormLayout>

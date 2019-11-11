@@ -31,7 +31,7 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:name, :location_type, :contact_name,
+    params.require(:location).permit(:name, :location_type, :contact_first_name, :contact_last_name,
                                      :contact_phone_number, :contact_email, :contact_relationship,
                                      :address_1, :address_2, :address_city, :address_state,
                                      :address_zip, :phone_number, :reference,

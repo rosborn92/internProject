@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+const BookingInput = styled.input`
+  /* position: absolute;
+  left: ${props => props.theme.contentPaddingLeft};
+  right: 0%;
+  top: 31.25%;
+  bottom: 0%; */
+  background: #FFFFFF;
+  border: 1px solid ${props => props.theme.zircon};
+  box-sizing: border-box;
+  width: 100%;
+  height: 65px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
+
 const HalfInput = styled.input`
   background: #ffffff;
   border: 1px solid ${props => props.theme.zircon};
@@ -46,4 +63,4 @@ const StyledSelect = styled.select`
   padding-right: 20px;
 `;
 
-export { HalfInput, FullInput, ThirdInput, StyledSelect };
+export { HalfInput, FullInput, ThirdInput, StyledSelect, BookingInput };

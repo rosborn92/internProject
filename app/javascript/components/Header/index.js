@@ -1,3 +1,4 @@
+import { AddBookingHeader } from "./AddBookingHeader";
 import { Header } from "./Header";
 
-export { Header };
+export { Header, AddBookingHeader };

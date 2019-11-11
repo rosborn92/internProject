@@ -12,6 +12,7 @@ const StyledH3 = styled.h3`
   letter-spacing: 0.15rem;
   padding-bottom: 12px;
   position: relative;
+  margin-top: -70px;
 
   &:before {
     border-bottom: 1px solid ${props => props.theme.funBlue};
@@ -24,4 +25,12 @@ const StyledH3 = styled.h3`
   }
 `;
 
-export { StyledH3 };
+const StyledSubHeader = styled.header`
+  font-family: ${props => props.theme.georgia};
+  font-size: 18px;
+  font-style: italic;
+  line-height: 20px;
+  color: #000000;
+`;
+
+export { StyledH3, StyledSubHeader };
