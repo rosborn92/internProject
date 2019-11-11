@@ -1,6 +1,7 @@
+import { Home } from "../Pages/Home";
+
 import { AddBooking } from "./AddBooking";
 import { AddLocation } from "./AddLocation";
-import { Home } from "../Pages/Home";
 import { App } from "./App";
 import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
