@@ -84,7 +84,6 @@ class AddLocation extends React.Component {
     } = this.state.form;
     const { success } = this.props;
 
-    console.log(this.state.form);
     return (
       <>
         <Header name="Add a Location" />
@@ -330,7 +329,6 @@ class AddLocation extends React.Component {
                   Submit
                 </SubmitButton>
               </div>
-              // {success && <Redirect to="/" />}
             </StyledFormLayout>
           </form>
         </StyledSlideOutPanel>

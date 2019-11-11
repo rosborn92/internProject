@@ -1,12 +1,7 @@
 import styled from "styled-components";
 
 const HalfInput = styled.input`
-  /* position: absolute;
-  left: ${props => props.theme.contentPaddingLeft};
-  right: 0%;
-  top: 31.25%;
-  bottom: 0%; */
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid ${props => props.theme.zircon};
   box-sizing: border-box;
   width: 100%;
@@ -18,10 +13,6 @@ const HalfInput = styled.input`
 `;
 
 const FullInput = styled.input`
-  /* left: ${props => props.theme.contentPaddingLeft}; */
-  /* top: 31.25%; */
-  /* bottom: 0%; */
-  /* background: #ffffff; */
   border: 1px solid ${props => props.theme.zircon};
   box-sizing: border-box;
   width: 100%;
@@ -34,10 +25,6 @@ const FullInput = styled.input`
 
 const ThirdInput = styled.input`
   left: ${props => props.theme.contentPaddingLeft};
-  /* right: 0%; */
-  /* top: 31.25%; */
-  /* bottom: 0%; */
-  */background: #ffffff;
   border: 1px solid ${props => props.theme.zircon};
   box-sizing: border-box;
   width: 100%;

@@ -40,12 +40,6 @@ class App extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevState) {
-  //     if(prevState.locations != this.state.locations) {
-  //         this.setState({success: false})
-  //     }
-  // }
-
   render() {
     const { locations } = this.state;
 
