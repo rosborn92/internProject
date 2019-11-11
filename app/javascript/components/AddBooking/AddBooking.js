@@ -61,7 +61,6 @@ class AddBooking extends React.Component {
       reference
     } = this.state.form;
 
-    console.log(this.state.form);
     return (
       <>
         <AddBookingHeader

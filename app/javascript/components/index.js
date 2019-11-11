@@ -1,6 +1,6 @@
 import { AddBooking } from "./AddBooking";
 import { AddLocation } from "./AddLocation";
-// import { Home } from "../../Pages/Home/Home";
+import { Home } from "../Pages/Home";
 import { App } from "./App";
 import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
@@ -22,7 +22,7 @@ export {
   AddBooking,
   SubmitButton,
   SaveBookingButton,
-  // Home,
+  Home,
   StyledSelect,
   FormSectionHeader,
   BookingSectionHeader,
